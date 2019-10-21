@@ -2,6 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import { Route, NavLink, withRouter, Redirect } from "react-router-dom";
 import * as actionCreators from "./state/actionCreators";
+import Login from "./components/Login";
+import Signup from "./components/SignUp";
 import "./App.css";
 import SignUp from "./components/SignUp";
 import Login from "./components/Login";
@@ -10,8 +12,8 @@ function App() {
   return (
     <div className="App">
       <h1>Hello Build</h1>
-      <SignUp/>
-      <Login/>
+      <Route exact path="/signup" component={Signup} />
+      <Route exact path="/login" component={Login} />
     </div>
   );
 }
