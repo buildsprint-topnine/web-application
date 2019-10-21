@@ -38,7 +38,21 @@ const initialItem = {
 export const itemReducer = (state = initialItem, action) => {
   switch (action.type) {
     case types.FETCHING_ITEM_START:
-      return {};
+      return {
+        ...state,
+        isFetching: true
+      };
+    case types.FETCH_ITEM_SUCCESS:
+      return {
+        ...state,
+        isFetching: false,
+        data: action.payload
+      };
+    case types.FETCH_ITEM_FAILURE:
+      return {
+        ...state,
+        error: action.payload
+      };
     default:
       return state;
   }
