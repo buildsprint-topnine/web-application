@@ -5,14 +5,25 @@ import * as actionCreators from "./state/actionCreators";
 import Login from "./components/Login";
 import Signup from "./components/SignUp";
 import "./App.css";
+import Dashboard from "./components/DashBoard";
+import AddItem from './components/AddItemForm'
 
 
 function App() {
   return (
     <div className="App">
       {/* <h1>Hello Build</h1> */}
+      <Route
+        path="/dashboard"
+        render={props => withAuthCheck(Dashboard, props)}
+      />
       <Route exact path="/signup" component={Signup} />
       <Route exact path="/login" component={Login} />
+      <Route
+        exact
+        path="/home/additem"
+        render={props => <AddItem {...props} />}
+      />
     </div>
   );
 }

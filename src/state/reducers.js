@@ -30,7 +30,9 @@ export const loginReducer = (state = initialLoginState, action) => {
 };
 
 const initialItem = {
-  data: [],
+  data: {
+    topNine: []
+  },
   isFetching: false,
   error: ""
 };
@@ -38,7 +40,36 @@ const initialItem = {
 export const itemReducer = (state = initialItem, action) => {
   switch (action.type) {
     case types.FETCHING_ITEM_START:
-      return {};
+      return {
+        ...state,
+        isFetching: true
+      };
+    case types.FETCH_ITEM_SUCCESS:
+      return {
+        ...state,
+        isFetching: false,
+        data: action.payload
+      };
+    case types.FETCH_ITEM_FAILURE:
+      return {
+        ...state,
+        error: action.payload
+      };
+    case types.ADD_ITEM_START:
+      return {
+        ...state,
+        data: [...state.data, action.payload]
+      };
+    case types.ADD_ITEM_SUCCESS:
+      return {
+        ...state,
+        data: action.payload
+      };
+    case types.ADD_ITEM_FAILURE:
+      return {
+        ...state,
+        error: action.payload
+      };
     default:
       return state;
   }
