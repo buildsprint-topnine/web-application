@@ -22,3 +22,23 @@ export function fetchItems(){
         })
     }
 }
+
+
+export function addFriend(char) {
+    return function(dispatch) {
+      axiosWithAuth()
+        .post("https://bw-my-top-nine.herokuapp.com/home/add-top-nine", char)
+        .then(res =>
+          dispatch({
+            type: types.ADD_ITEM_SUCCESS,
+            payload: res.data
+          })
+        )
+        .catch(error =>
+          dispatch({
+            type: types.ADD_ITEM_FAILURE,
+            payload: error
+          })
+        );
+    };
+  }
