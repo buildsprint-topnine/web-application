@@ -42,8 +42,8 @@ const SignUp = props => {
       .then(response => {
         setLoading(false);
 
-        localStorage.setItem('token', response.data.token)
-        props.history.push("/dashboard/home");
+        // localStorage.setItem('token', response.data.token)
+        props.history.push("/");
       })
       .catch(error => {
         setLoading(false);
