@@ -1,7 +1,7 @@
 import React from "react";
 import * as actionCreators from "../state/actionCreators";
 import { connect } from "react-redux";
-//import SideBar from "./SideBar";
+import SideBar from "./SideBar";
 import HomeList from "./HomeList";
 import FriendList from "./FriendsList";
 import { Route, NavLink, Redirect } from "react-router-dom";
