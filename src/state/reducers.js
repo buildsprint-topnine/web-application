@@ -87,7 +87,20 @@ const initialFriend = {
 export const friendReducer = (state = initialFriend, action) => {
   switch (action.type) {
     case types.FETCHING_FRIEND_START:
-      return {};
+      return {
+        ...state,
+        isFetching: true
+      };
+    case types.FETCH_FRIEND_SUCCESS:
+      return {
+        ...state,
+        data: action.payload
+      }
+    case types.FETCH_FRIEND_FAILURE:
+      return{
+        ...state,
+        error:action.payload
+      }
     default:
       return state;
   }
