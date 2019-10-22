@@ -8,10 +8,11 @@ import "./App.css";
 import Dashboard from "./components/DashBoard";
 import AddItem from './components/AddItemForm'
 
+
 function App() {
   return (
     <div className="App">
-      <h1>Hello Build</h1>
+      {/* <h1>Hello Build</h1> */}
       <Route
         path="/dashboard"
         render={props => withAuthCheck(Dashboard, props)}

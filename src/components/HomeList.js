@@ -19,28 +19,27 @@ function HomeList(props) {
     <div>
       <h2>Welcome</h2>
       <NavLink to="/home/additem">
-        <button>Add Friends</button>
+        <button className="lg-form-button">Add Your Favs!</button>
       </NavLink>
-      <FirstDiv>
-        {item.data.topNine.map(char => (
-          <div key={char.id}>
-            <HomeCard things={char} />
-          </div>
-        ))}
-      </FirstDiv>
+
+      {item.data.topNine.map(char => (
+        <div key={char.id}>
+          <HomeCard things={char} />
+        </div>
+      ))}
     </div>
   );
 }
 
-const FirstDiv = styled.div`
-  border: 2px solid green;
-  display: flex;
-  flex-direction: row;
-  margin-left: 198px;
-  margin-top: 10px;
-  justify-content: space-evenly;
-  width: 1117px;
-`;
+// const FirstDiv = styled.div`
+//   border: 2px solid green;
+//   display: flex;
+//   flex-direction: row;
+//   margin-left: 198px;
+//   margin-top: 10px;
+//   justify-content: space-evenly;
+//   width: 1117px;
+// `;
 
 export default connect(
   state => {

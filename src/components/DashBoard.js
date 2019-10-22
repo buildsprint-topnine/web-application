@@ -3,25 +3,32 @@ import * as actionCreators from "../state/actionCreators";
 import { connect } from "react-redux";
 //import SideBar from "./SideBar";
 import HomeList from "./HomeList";
+import FriendList from "./FriendsList";
 import { Route, NavLink, Redirect } from "react-router-dom";
 import styled from "styled-components";
+import Favicon from "react-favicon";
 
 function DashBoard(props) {
   //console.log(props);
+  const onLogout = () => {
+    localStorage.removeItem("token");
+    props.history.push("/");
+  };
   return (
     <div>
       <NavDiv className="sideBar">
+        <Favicon />
         <NavLink exact to="/dashboard/home">
           <div>
             <h3>Home</h3>
           </div>
         </NavLink>
-        <NavLink exact to="/friends">
+        <NavLink exact to="/dashboard/friends">
           <div>
             <h3>Friends</h3>
           </div>
         </NavLink>
-        <NavLink exact to="/logout">
+        <NavLink exact to="/" onClick={onLogout}>
           <div>
             <h3>Logout</h3>
           </div>
@@ -33,7 +40,11 @@ function DashBoard(props) {
         path="/dashboard/home"
         render={props => <HomeList {...props} />}
       />
-      {/* <HomeList {...props} /> */}
+      <Route
+        exact
+        path="/dashboard/friends"
+        render={props => <FriendList {...props} />}
+      />
     </div>
   );
 }
@@ -45,33 +56,23 @@ function DashBoard(props) {
 // }
 
 const NavDiv = styled.div`
-  border: 2px solid red;
   div {
     width: 160px;
     height: 80px;
-    /* left: 0px;
-    top: 180px; */
     display: flex;
     justify-content: center;
     align-items: center;
-
-    /* Light Grey */
 
     background: #f5f5f5;
 
     &:hover {
       width: 160px;
       height: 80px;
-      /* left: 0px;
-      top: 100px; */
-
-      /* White */
 
       background: #ffffff;
     }
 
     h3 {
-     
       width: 71px;
       height: 30px;
       left: 31px;
@@ -82,12 +83,9 @@ const NavDiv = styled.div`
       font-weight: bold;
       font-size: 20px;
       line-height: 150%;
-      /* identical to box height, or 30px */
 
       display: flex;
       align-items: center;
-
-      /* Support */
 
       color: #95a2b3;
       &:hover {
@@ -99,12 +97,9 @@ const NavDiv = styled.div`
         font-weight: bold;
         font-size: 20px;
         line-height: 150%;
-        /* identical to box height, or 30px */
 
         display: flex;
         align-items: center;
-
-        /* Primary */
 
         color: #f35667;
       }
