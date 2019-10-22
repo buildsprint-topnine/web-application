@@ -63,12 +63,8 @@ export function friendList(){
       })
     })
   }
-export function removeItem(el) {
-  return {
-    type: types.DELETE_ITEM_SUCCESS,
-    payload: el
-  };
-}
+
+
 
 export function deleteItem(id) {
   return function(dispatch) {
