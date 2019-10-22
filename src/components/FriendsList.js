@@ -6,28 +6,25 @@ import FriendCard from "../components/FriendCard";
 
 
 function FriendList(props) {
-const {friendList, friend } = props;
-console.log(friend);
-console.log(props);
+  const { friendList, friend } = props;
+  console.log(friend);
+  console.log(props);
 
-useEffect(() => {
-  friendList();
-}, [friendList]);
+  useEffect(() => {
+    friendList();
+  }, [friendList]);
 
   return <div>
     <h2>Friends</h2>
-    
     {
       friend.data.map(newFriend => (
         <div key={newFriend.id}>
-          <FriendCard newFriend={newFriend}/>
+          <FriendCard newFriend={newFriend} />
         </div>
       ))
     }
-    
   </div>;
 }
-
 
 export default connect(
   state => {

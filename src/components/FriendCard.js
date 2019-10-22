@@ -1,16 +1,27 @@
 import React from 'react';
 import * as actionCreators from "../state/actionCreators";
 import { connect } from "react-redux";
+import styled from 'styled-components';
+
+const Div = styled.div`
+display:flex;
+width: 580px;
+flex-direction: column;
+`;
+
+const P = styled.div`
+flex-direction: column;
+`;
 
 function FriendCard({ newFriend }) {
 
     console.log(newFriend);
 
     return (
-        <div>
-            <p> <h1>{newFriend.name}</h1></p>
-            <p> <h2>{newFriend.email}</h2></p>
-        </div>
+        <Div>
+            <P>{newFriend.name}</P>
+            <P>{newFriend.email}</P>
+        </Div>
     )
 }
 
