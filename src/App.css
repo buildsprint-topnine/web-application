@@ -101,6 +101,9 @@
   padding: 10px;
   font-size: 1.5rem;
 }
+/* .lg-welcome {
+  background: #f5f8fa;
+} */
 
 .lg-form-input {
   width: 200px;
@@ -144,7 +147,7 @@
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
   left: 0;
-  background-color:#F5F5F5; /* Black */
+  background-color: #f5f5f5; /* Black */
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 20px;
   display: flex;
