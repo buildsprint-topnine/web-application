@@ -3,6 +3,11 @@ import * as actionCreators from "../state/actionCreators";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 import HomeCard from "./HomeCard";
+import styled from 'styled-components';
+
+const Div = styled.div`
+flex: 1;
+`;
 
 function HomeList(props) {
   const { fetchItems, item, deleteItem } = props;
@@ -19,7 +24,7 @@ function HomeList(props) {
   }
 
   return (
-    <div>
+    <Div>
       <h2>Welcome</h2>
       <NavLink to="/home/additem">
         <button className="lg-form-button">Add Your Favs!</button>
@@ -40,7 +45,7 @@ function HomeList(props) {
           
         </div>
       ))}
-    </div>
+    </Div>
   );
 }
 
