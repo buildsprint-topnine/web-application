@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
+import plantImg from "../plant 1.png";
 
 const initUser = {
   email: "",
@@ -35,10 +36,10 @@ export default function Login(props) {
 
   return (
     <div className="lg-container">
-      <div>
+      <div className="lg-welcome">
         <h2>Welcome Back</h2>
         <p>Log in to continue building your top nine</p>
-        <img src="" alt="nice login"></img>
+        <img src={plantImg} alt="nice login"></img>
       </div>
       <form className="lg-form" onSubmit={handleSubmit}>
         <h4 style={{ color: "#1F43D4" }}>LOGIN</h4>
@@ -69,11 +70,12 @@ export default function Login(props) {
             Login
           </button>
         </div>
+        <br></br>
+        <p>Or create an account today ? </p>
+        <NavLink style={{ color: "red", fontSize: "20px" }} exact to="/signup">
+          SignUp
+        </NavLink>
       </form>
-      <p>Or create an account today ? </p>
-      <NavLink style={{color:"red"}} exact to="/signup">
-        SignUp
-      </NavLink>
     </div>
   );
 }
