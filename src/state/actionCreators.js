@@ -64,7 +64,7 @@ export function friendList(){
     })
   }
 
-
+}
 
 export function deleteItem(id) {
   return function(dispatch) {
