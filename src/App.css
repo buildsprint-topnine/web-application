@@ -4,6 +4,7 @@
   flex-direction: column;
   text-align: center;
   width: 100%;
+  font-family: Ubuntu;
 }
 
 .App-logo {
@@ -28,7 +29,6 @@
 .su-container {
   text-align: center;
   height: 100vh;
-  /* background-image: url(../src/coffee.png); */
   background: url(../src/coffee.png),
     linear-gradient(180deg, #1f43d4 0%, rgba(31, 67, 212, 0.5) 100%);
   display: flex;
@@ -101,17 +101,16 @@
   padding: 10px;
   font-size: 1.5rem;
 }
-/* .lg-welcome {
-  background: #f5f8fa;
-} */
 
 .lg-form-input {
-  width: 200px;
-  height: 50px;
-  background: none;
+  height: 40px;
+  border-radius: 5px;
+  background: #edf2f7;
   border: none;
-  border-bottom: 2px solid #f35667;
-  margin-bottom: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 20px;
+  font-size: 14px;
 }
 
 .lg-form-button {
@@ -120,6 +119,23 @@
   background: #f35667;
   border-radius: 8px;
   color: white;
+  height: 45px;
+  margin-top: 45px;
+  width: -webkit-fill-available;
+}
+
+.lg-mini-container {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-family: ubuntu;
+  font-size: 14px;
+  color: #4664db;
+}
+.login-a {
+  text-decoration: none;
+  font-style: italic;
+  color: red;
+  font-size: 14px;
 }
 
 .lg-form-signup {
@@ -133,16 +149,12 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 150%;
-  /* identical to box height, or 24px */
-
-  /* Secondary */
 
   background: #f5f8fa;
 }
 
 .m-container {
   display: flex;
-  
 }
 
 .sideBar {
@@ -152,10 +164,13 @@
 }
 
 .sidebar-div {
-  padding-top:40px;
-  padding-left:40px;
+  padding-top: 40px;
+  padding-left: 40px;
   text-align: left;
-  
+}
+
+.sidebar-div h3 {
+  font-size: 15px;
 }
 
 .mapped-friend {
@@ -163,3 +178,7 @@
   padding-bottom: 20px;
 }
 
+.lg-section {
+  display: flex;
+  background: #f5f8fa;
+}

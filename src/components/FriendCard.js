@@ -6,6 +6,7 @@ import styled from 'styled-components';
 const Div = styled.div`
 display: flex;
     margin-top: 25px;
+    line-height:6px;
 `;
 
 const P = styled.p`

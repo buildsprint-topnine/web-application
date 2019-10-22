@@ -36,46 +36,54 @@ export default function Login(props) {
 
   return (
     <div className="lg-container">
+
+      <section className="lg-section">
       <div className="lg-welcome">
         <h2>Welcome Back</h2>
         <p>Log in to continue building your top nine</p>
         <img src={plantImg} alt="nice login"></img>
       </div>
       <form className="lg-form" onSubmit={handleSubmit}>
-        <h4 style={{ color: "#1F43D4" }}>LOGIN</h4>
-        <div>
-          <input
-            required
-            name="email"
-            placeholder="email"
-            value={user.email}
-            onChange={handleInput}
-            className="lg-form-input"
-          />
-        </div>
-        <div>
-          <input
-            required
-            name="password"
-            value={user.password}
-            type="password"
-            placeholder="Password"
-            onChange={handleInput}
-            className="lg-form-input"
-          />
-        </div>
 
-        <div>
-          <button type="submit" className="lg-form-button">
-            Login
+        <div className="lg-mini-container">
+          <h4 style={{ color: "#2f50d7;" , fontSize: "27px" }}>LOGIN</h4>
+          <div className="mini-container">
+            Email
+          <input
+              required
+              name="email"
+              placeholder="email"
+              value={user.email}
+              onChange={handleInput}
+              className="lg-form-input"
+            />
+          </div>
+          <div className="mini-container">
+            Password
+          <input
+              required
+              name="password"
+              value={user.password}
+              type="password"
+              placeholder="Password"
+              onChange={handleInput}
+              className="lg-form-input"
+            />
+          </div>
+
+          <div>
+            <button type="submit" className="lg-form-button">
+              Login
           </button>
-        </div>
-        <br></br>
-        <p>Or create an account today ? </p>
-        <NavLink style={{ color: "red", fontSize: "20px" }} exact to="/signup">
-          SignUp
+          </div>
+          <br></br>
+          <NavLink className="login-a" style={{ color: "#4183c4", fontSize: "14px" }} exact to="/signup">
+            SignUp Instead
         </NavLink>
+        </div>
       </form>
+
+      </section>
     </div>
   );
 }

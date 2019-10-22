@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 import FriendCard from "../components/FriendCard";
 import styled from "styled-components";
+import TopBar from "../components/TopBar";
 
 const Div = styled.div`
 flex: 1;
@@ -13,6 +14,8 @@ margin-right: 50px;
 
 const H2 = styled.h2`
 margin: 20px 0px;
+text-align:left;
+color: #4183c6;
 `;
 
 function FriendList(props) {
@@ -25,6 +28,8 @@ function FriendList(props) {
   }, [friendList]);
 
   return <Div>
+    <TopBar/>
+
     <H2>Your Friends</H2>
     {
       friend.data.map(newFriend => (
@@ -38,7 +43,7 @@ function FriendList(props) {
 
 export default connect(
   state => {
-    // console.log(state);
+    
     return state;
   },
   actionCreators
