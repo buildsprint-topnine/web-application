@@ -1,15 +1,14 @@
 import React from "react";
 import * as actionCreators from "../state/actionCreators";
 import { connect } from "react-redux";
-//import SideBar from "./SideBar";
 import HomeList from "./HomeList";
 import FriendList from "./FriendsList";
 import { Route, NavLink, Redirect } from "react-router-dom";
 import styled from "styled-components";
 import Favicon from "react-favicon";
+import Home from "./Home";
 
 function DashBoard(props) {
-  //console.log(props);
   const onLogout = () => {
     localStorage.removeItem("token");
     props.history.push("/");
@@ -45,15 +44,15 @@ function DashBoard(props) {
         path="/dashboard/friends"
         render={props => <FriendList {...props} />}
       />
+      <Route
+        path="/movies/:id"
+        render={props => {
+          return <Home {...props} />;
+        }}
+      />
     </div>
   );
 }
-// function withAuthCheck(Component, routeProps) {
-//   if (localStorage.getItem("token")) {
-//     return <Component {...routeProps} />;
-//   }
-//   return <Redirect to="/" />;
-// }
 
 const NavDiv = styled.div`
   div {
@@ -108,7 +107,6 @@ const NavDiv = styled.div`
 `;
 export default connect(
   state => {
-    //console.log(state);
     return state;
   },
   actionCreators

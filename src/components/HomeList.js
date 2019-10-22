@@ -1,20 +1,22 @@
 import React, { useEffect } from "react";
 import * as actionCreators from "../state/actionCreators";
 import { connect } from "react-redux";
-import { Route, NavLink } from "react-router-dom";
-import AddItem from "./AddItemForm";
+import { NavLink } from "react-router-dom";
 import HomeCard from "./HomeCard";
-import styled from "styled-components";
 
 function HomeList(props) {
-  const { fetchItems, item } = props;
-  //debugger;
+  const { fetchItems, item, deleteItem } = props;
+
   console.log(props);
 
   useEffect(() => {
-    //debugger;
     fetchItems();
   }, [fetchItems]);
+
+  function delItem(e, id) {
+    e.preventDefault();
+    deleteItem(id);
+  }
 
   return (
     <div>
@@ -25,26 +27,24 @@ function HomeList(props) {
 
       {item.data.topNine.map(char => (
         <div key={char.id}>
-          <HomeCard things={char} />
+          <NavLink to={`/item/${char.id}`}>
+            <HomeCard things={char} />
+            <button
+              onClick={function(e) {
+                return delItem(e, char.id);
+              }}
+            >
+              X
+            </button>
+          </NavLink>
         </div>
       ))}
     </div>
   );
 }
 
-// const FirstDiv = styled.div`
-//   border: 2px solid green;
-//   display: flex;
-//   flex-direction: row;
-//   margin-left: 198px;
-//   margin-top: 10px;
-//   justify-content: space-evenly;
-//   width: 1117px;
-// `;
-
 export default connect(
   state => {
-    console.log(state);
     return state;
   },
   actionCreators

@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { addFriend } from "../state/actionCreators";
+import { addItem } from "../state/actionCreators";
 
 function AddItem(props) {
-  //debugger;
-  console.log(props);
   const [friend, setFriend] = useState({
     title: "",
     description: ""
@@ -19,7 +17,7 @@ function AddItem(props) {
 
   function submitForm(e) {
     e.preventDefault();
-    props.addFriend(friend);
+    props.addItem(friend);
     props.history.push("/dashboard/home");
 
     return setFriend({
@@ -30,10 +28,10 @@ function AddItem(props) {
 
   return (
     <div>
-      <div>Add A New Friend</div>
+      <div>Add An Item</div>
       <form onSubmit={submitForm}>
         <label>
-          Friend's Title:
+          Item Title:
           <br />
           <input
             name="title"
@@ -44,7 +42,7 @@ function AddItem(props) {
         </label>
         <br />
         <label>
-          Friend's Decription:
+          Item Decription:
           <br />
           <input
             name="description"
@@ -65,5 +63,5 @@ function AddItem(props) {
 }
 export default connect(
   state => state,
-  { addFriend }
+  { addItem }
 )(AddItem);

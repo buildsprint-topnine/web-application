@@ -1,18 +1,17 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Route, NavLink, withRouter, Redirect } from "react-router-dom";
+import { Route, withRouter, Redirect } from "react-router-dom";
 import * as actionCreators from "./state/actionCreators";
 import Login from "./components/Login";
 import Signup from "./components/SignUp";
 import "./App.css";
 import Dashboard from "./components/DashBoard";
-import AddItem from './components/AddItemForm'
-
+import AddItem from "./components/AddItemForm";
+import Home from "./components/Home";
 
 function App() {
   return (
     <div className="App">
-      {/* <h1>Hello Build</h1> */}
       <Route
         path="/dashboard"
         render={props => withAuthCheck(Dashboard, props)}
@@ -23,6 +22,12 @@ function App() {
         exact
         path="/home/additem"
         render={props => <AddItem {...props} />}
+      />
+      <Route
+        path="/item/:id"
+        render={props => {
+          return <Home {...props} />;
+        }}
       />
     </div>
   );
