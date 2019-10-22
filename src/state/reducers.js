@@ -30,6 +30,7 @@ export const loginReducer = (state = initialLoginState, action) => {
 };
 
 const initialItem = {
+  // data:[],
   data: {
     topNine: []
   },
@@ -58,7 +59,7 @@ export const itemReducer = (state = initialItem, action) => {
     case types.ADD_ITEM_START:
       return {
         ...state,
-        data: [...state.data, action.payload]
+        data: action.payload
       };
     case types.ADD_ITEM_SUCCESS:
       return {

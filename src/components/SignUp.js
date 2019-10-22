@@ -42,7 +42,8 @@ const SignUp = props => {
       .then(response => {
         setLoading(false);
 
-        props.history.push("/login");
+        // localStorage.setItem('token', response.data.token)
+        props.history.push("/");
       })
       .catch(error => {
         setLoading(false);
@@ -73,7 +74,7 @@ const SignUp = props => {
         <div className="mini-container">
           <button onClick={submit} className="su-form-button">{loading ? "Loading" : "Submit"}</button>
         </div>
-        <Link to="/login"> <p>Log in instead</p> </Link>
+        <Link to="/"> <p>Log in instead</p> </Link>
       </section>
     </div >
   );

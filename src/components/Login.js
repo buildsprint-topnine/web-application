@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { NavLink } from "react-router-dom";
 
 const initUser = {
   email: "",
@@ -21,7 +22,7 @@ export default function Login(props) {
         console.log(res.data);
 
         window.localStorage.setItem("token", res.data.token);
-        props.history.push("/dashboard");
+        props.history.push("/dashboard/home");
       })
       .catch(err => {
         console.log(err);
@@ -69,6 +70,10 @@ export default function Login(props) {
           </button>
         </div>
       </form>
+      <p>Or create an account today ? </p>
+      <NavLink style={{color:"red"}} exact to="/signup">
+        SignUp
+      </NavLink>
     </div>
   );
 }

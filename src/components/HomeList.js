@@ -3,6 +3,8 @@ import * as actionCreators from "../state/actionCreators";
 import { connect } from "react-redux";
 import { Route, NavLink } from "react-router-dom";
 import AddItem from "./AddItemForm";
+import HomeCard from "./HomeCard";
+import styled from "styled-components";
 
 function HomeList(props) {
   const { fetchItems, item } = props;
@@ -15,28 +17,29 @@ function HomeList(props) {
 
   return (
     <div>
-      <h1>Hello</h1>
+      <h2>Welcome</h2>
       <NavLink to="/home/additem">
-        <button>Add Friends</button>
+        <button className="lg-form-button">Add Your Favs!</button>
       </NavLink>
+
       {item.data.topNine.map(char => (
         <div key={char.id}>
-          Title:{char.title} Description:{char.description}
-          {/* <button
-            className="button2"
-            onClick={function(e) {
-              return delSmurf(e, char.id);
-            }}
-          >
-            X
-          </button> */}
+          <HomeCard things={char} />
         </div>
       ))}
-    
     </div>
-    
   );
 }
+
+// const FirstDiv = styled.div`
+//   border: 2px solid green;
+//   display: flex;
+//   flex-direction: row;
+//   margin-left: 198px;
+//   margin-top: 10px;
+//   justify-content: space-evenly;
+//   width: 1117px;
+// `;
 
 export default connect(
   state => {
