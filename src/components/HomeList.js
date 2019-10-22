@@ -12,6 +12,7 @@ function HomeList(props) {
   console.log(props);
 
   useEffect(() => {
+    //debugger;
     fetchItems();
   }, [fetchItems]);
 

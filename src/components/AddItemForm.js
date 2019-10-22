@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { addFriend } from "../state/actionCreators";
 
 function AddItem(props) {
-   // debugger;
+  //debugger;
   console.log(props);
   const [friend, setFriend] = useState({
     title: "",
@@ -19,8 +19,8 @@ function AddItem(props) {
 
   function submitForm(e) {
     e.preventDefault();
-    props.history.push("/dashboard/home");
     props.addFriend(friend);
+    props.history.push("/dashboard/home");
 
     return setFriend({
       title: "",
