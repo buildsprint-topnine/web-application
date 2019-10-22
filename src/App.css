@@ -4,6 +4,7 @@
   flex-direction: column;
   text-align: center;
   width: 100%;
+  font-family: Ubuntu;
 }
 
 .App-logo {
@@ -28,7 +29,6 @@
 .su-container {
   text-align: center;
   height: 100vh;
-  /* background-image: url(../src/coffee.png); */
   background: url(../src/coffee.png),
     linear-gradient(180deg, #1f43d4 0%, rgba(31, 67, 212, 0.5) 100%);
   display: flex;
@@ -101,17 +101,16 @@
   padding: 10px;
   font-size: 1.5rem;
 }
-/* .lg-welcome {
-  background: #f5f8fa;
-} */
 
 .lg-form-input {
-  width: 200px;
-  height: 50px;
-  background: none;
+  height: 40px;
+  border-radius: 5px;
+  background: #edf2f7;
   border: none;
-  border-bottom: 2px solid #f35667;
-  margin-bottom: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 20px;
+  font-size: 14px;
 }
 
 .lg-form-button {
@@ -120,6 +119,23 @@
   background: #f35667;
   border-radius: 8px;
   color: white;
+  height: 45px;
+  margin-top: 45px;
+  width: -webkit-fill-available;
+}
+
+.lg-mini-container {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-family: ubuntu;
+  font-size: 14px;
+  color: #4664db;
+}
+.login-a {
+  text-decoration: none;
+  font-style: italic;
+  color: red;
+  font-size: 14px;
 }
 
 .lg-form-signup {
@@ -133,24 +149,36 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 150%;
-  /* identical to box height, or 24px */
-
-  /* Secondary */
 
   background: #f5f8fa;
 }
 
-.sideBar {
-  height: 100%; /* Full-height: remove this if you want "auto" height */
-  width: 160px; /* Set the width of the sidebar */
-  position: absolute; /* Fixed Sidebar (stay in place on scroll) */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
-  left: 0;
-  background-color: #f5f5f5; /* Black */
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 20px;
+.m-container {
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+}
+
+.sideBar {
+  width: 180px;
+  background: #f5f5f5;
+  height: 100vh;
+}
+
+.sidebar-div {
+  padding-top: 40px;
+  padding-left: 40px;
+  text-align: left;
+}
+
+.sidebar-div h3 {
+  font-size: 15px;
+}
+
+.mapped-friend {
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 20px;
+}
+
+.lg-section {
+  display: flex;
+  background: #f5f8fa;
 }
