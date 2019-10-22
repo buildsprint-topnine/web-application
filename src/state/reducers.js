@@ -1,5 +1,4 @@
 import * as types from "./actionTypes";
-import { AccordionTitle } from "semantic-ui-react";
 
 const initialSignupState = {
   name: "",
@@ -31,8 +30,6 @@ export const loginReducer = (state = initialLoginState, action) => {
 };
 
 const initialItem = {
-  // data:[],
-  // id:null,
   data: {
     topNine: []
   },
@@ -63,12 +60,17 @@ export const itemReducer = (state = initialItem, action) => {
         ...state,
         data: action.payload
       };
-    // case types.ADD_ITEM_SUCCESS:
-    //   return {
-    //     ...state,
-    //   //  id:action.payload
-    //   };
     case types.ADD_ITEM_FAILURE:
+      return {
+        ...state,
+        error: action.payload
+      };
+    case types.DELETE_ITEM_START:
+      return {
+        ...state,
+        data: action.payload
+      };
+    case types.DELETE_ITEM_FAILURE:
       return {
         ...state,
         error: action.payload
