@@ -37,6 +37,7 @@ function HomeList(props) {
               X
             </button>
           </NavLink>
+          
         </div>
       ))}
     </div>
