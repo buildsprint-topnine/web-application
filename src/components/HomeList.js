@@ -17,6 +17,10 @@ display: flex;
 justify-content: space-between;
 `;
 
+const P = styled.p`
+line-height: 100px;
+`;
+
 function HomeList(props) {
   const { fetchItems, item, deleteItem } = props;
 
@@ -37,7 +41,7 @@ function HomeList(props) {
       <TopBar/>
       
       <Div2 >
-        <p>Hey James, lorem ipsum lorem ipsum </p>
+        <P>Hey James, lorem ipsum lorem ipsum </P>
         <NavLink to="/home/additem">
           <button className="lg-form-button">Add Your Favs!</button>
         </NavLink>
