@@ -19,7 +19,7 @@ const SignUp = props => {
         setLoading(false);
 
         // localStorage.setItem('token', response.data.token)
-        props.history.push("/login");
+        props.history.push("/");
       })
       .catch(error => {
         setLoading(false);

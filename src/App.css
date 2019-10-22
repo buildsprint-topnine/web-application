@@ -1,5 +1,9 @@
 .App {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   text-align: center;
+  width: 100%;
 }
 
 .App-logo {
@@ -69,4 +73,19 @@
   /* Secondary */
 
   background: #f5f8fa;
+}
+
+.sideBar {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 160px; /* Set the width of the sidebar */
+  position: absolute; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color:#F5F5F5; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
