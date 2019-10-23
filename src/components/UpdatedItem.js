@@ -98,7 +98,7 @@ const UpdatedItem = props => {
           <br />
           <Div>
             <Button className="button" type="submit">
-              SUBMIT
+              Update
             </Button>
           </Div>
         </form>
