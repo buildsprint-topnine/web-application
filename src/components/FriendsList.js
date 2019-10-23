@@ -4,42 +4,41 @@ import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 import FriendCard from "../components/FriendCard";
 import styled from "styled-components";
-import TopBar from "../components/TopBar";
+import TopBarFriends from "../components/TopBarFriends";
 
 const Div = styled.div`
-flex: 1;
-margin-left: 50px;
-margin-right: 50px;
+  flex: 1;
+  margin-left: 50px;
+  margin-right: 50px;
 `;
 
 const H2 = styled.h2`
-margin: 20px 0px;
-text-align:left;
-color: #4183c6;
+  margin: 20px 0px;
+  text-align: left;
+  color: #4183c6;
 `;
 
 function FriendList(props) {
-  console.log(props)
-  const { friendList, friend  } = props;
-  // console.log(friend);
-
+  //console.log(props)
+  const { friendList, friend } = props;
+  //console.log(friend);
 
   useEffect(() => {
     friendList();
   }, [friendList]);
 
-  return <Div>
-    {/* <TopBar/> */}
+  return (
+    <Div>
+      {/* <TopBarFriends handle={friend}/> */}
 
-    <h2>Your Friends</h2>
-    {
-      friend.data.map(newFriend => (
+      <h2>Your Friends</h2>
+      {friend.data.map(newFriend => (
         <div className="mapped-friend" key={newFriend.id}>
           <FriendCard newFriend={newFriend} />
         </div>
-      ))
-    }
-  </Div>;
+      ))}
+    </Div>
+  );
 }
 
 export default connect(

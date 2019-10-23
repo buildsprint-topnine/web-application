@@ -7,7 +7,6 @@ import styled from "styled-components";
 
 function Home(props) {
   const [state, setState] = useState({});
-
   useEffect(() => {
     fetchMovie(props.match.params.id);
   }, [props.match.params.id]);
@@ -16,7 +15,6 @@ function Home(props) {
     axiosWithAuth()
       .get(`https://bw-my-top-nine.herokuapp.com/home/${id}`)
       .then(res => {
-        //debugger;
         return setState(res.data);
       })
       .catch(err => console.log(err.response));
@@ -27,7 +25,7 @@ function Home(props) {
   }
 
   return (
-    <div>
+    <div className="update-container">
       <DivStyle>
         <HomeCard things={state} />
       </DivStyle>
@@ -41,20 +39,20 @@ function Home(props) {
 export default connect(state => state)(Home);
 
 const DivStyle = styled.div`
-  border: 2px solid red;
-  margin-left: 20%;
+  border: 5px solid black;
+  margin-left: 29%;
   margin-right: 20%;
   margin-top: 5%;
+  border-radius: 8px;
   align-content: center;
+  background: rgb(214, 202, 245);
+  opacity: 0.9;
+  box-shadow: 2px 2px;
+  width: 40%;
+  display: flex;
+  justify-content: center;
   img {
-    border: 2px solid green;
-    margin-top:4px;
-  }
-  h2 {
-    border: 2px solid green;
-  }
-  p {
-    border: 2px solid green;
+    margin-top: 2px;
   }
 `;
 
@@ -66,5 +64,5 @@ const Button = styled.button`
   padding: 0.25em 1em;
   height: 40px;
   width: 160px;
-  margin-top:10px;
+  margin-top: 10px;
 `;

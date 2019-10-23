@@ -122,6 +122,7 @@
   height: 45px;
   margin-top: 45px;
   width: -webkit-fill-available;
+  cursor: pointer;
 }
 
 .lg-mini-container {
@@ -171,6 +172,14 @@
 
 .sidebar-div h3 {
   font-size: 15px;
+  color: #95a2b3;
+}
+
+.sidebar-div:hover {
+  background: #ffffff;
+}
+.sidebar-div h3:hover {
+  color: #f35667;
 }
 
 .mapped-friend {
@@ -181,4 +190,10 @@
 .lg-section {
   display: flex;
   background: #f5f8fa;
+}
+
+.update-container {
+  background: url(../src/logo192.png),
+    linear-gradient(180deg, #1f43d4 0%, rgba(31, 67, 212, 0.5) 100%);
+  height: 100vh;
 }

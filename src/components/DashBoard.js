@@ -3,8 +3,7 @@ import * as actionCreators from "../state/actionCreators";
 import { connect } from "react-redux";
 import HomeList from "./HomeList";
 import FriendList from "./FriendsList";
-import { Route, NavLink, Redirect } from "react-router-dom";
-import styled from "styled-components";
+import { Route, NavLink } from "react-router-dom";
 import Home from "./Home";
 
 function DashBoard(props) {
