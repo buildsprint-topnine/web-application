@@ -1,73 +1,68 @@
-<<<<<<< HEAD
-import React, { useState } from "react";
-=======
-import React, { useEffect } from "react";
-import * as actionCreators from "../state/actionCreators";
-import { connect } from "react-redux";
-import { Route, NavLink } from "react-router-dom";
-import AddItem from "./AddItemForm";
-import HomeCard from "./HomeCard";
+import React, { useState, useEffect } from "react";
+// import * as actionCreators from "../state/actionCreators";
+// import { connect } from "react-redux";
+import FriendItemCard from "./FriendItemCard";
+import axiosWithAuth from "../utils/axiosWithAuth";
 import styled from "styled-components";
 
-function FriendHome(props) {
-  const { fetchItems, item } = props;
-  //debugger;
+const Div = styled.div`
+  flex: 1;
+  margin-left: 200px;
+  /* margin-right: 30px; */
+  align-items: center;
+`;
+
+const ItemCard = styled.div`
+  flex-basis: 300px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  width: 38%;
+  margin: 1% 3%;
+  box-shadow: 0px 3px 8px rgba(56, 105, 160, 0.25);
+  border-radius: 4px;
+`;
+
+const ItemContainer = styled.div`
+  /* border: 2px solid red; */
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+const initialFriendItem = [];
+
+const FriendHome = props => {
+  const [topNine, setTopNine] = useState(initialFriendItem);
+  const id = props.match.params.id;
   console.log(props);
 
   useEffect(() => {
-    //debugger;
-    fetchItems();
-  }, [fetchItems]);
+    axiosWithAuth()
+      .get(`https://bw-my-top-nine.herokuapp.com/users/${id}/top-nine`)
+      .then(res => {
+        return setTopNine(res.data);
+      })
+      .catch(err => {
+        console.log(err.response);
+      });
+  }, [id]);
+
+  if (!topNine) {
+    return <div>Loading Friend's Item information...</div>;
+  }
 
   return (
-    <div>
-      <h2>Welcome</h2>
-      <NavLink to="/home/additem">
-        <button className="lg-form-button">Add Your Favs!</button>
-      </NavLink>
-
-      {item.data.topNine.map(char => (
-        <div key={char.id}>
-          <HomeCard things={char} />
-        </div>
-      ))}
-    </div>
+    <Div>
+      <ItemContainer>
+        {topNine.map(item => (
+          <ItemCard key={item.id}>
+            <div>
+              <FriendItemCard item={item} />
+            </div>
+          </ItemCard>
+        ))}
+      </ItemContainer>
+    </Div>
   );
-}
+};
 
-// const FirstDiv = styled.div`
-//   border: 2px solid green;
-//   display: flex;
-//   flex-direction: row;
-//   margin-left: 198px;
-//   margin-top: 10px;
-//   justify-content: space-evenly;
-//   width: 1117px;
-// `;
-
-function HomeCard({ things }) {
-  //debugger;
-  console.log(things);
-
-  return (
-    <div>
-      <div>
-        <Card.Header>
-          <h2>{things.title}</h2>
-        </Card.Header>
-        <Card.Description>
-          <p>{things.description}</p>
-        </Card.Description>
-      </div>
-    </div>
-  );
-}
-
-export default connect(
-  state => {
-    console.log(state);
-    return state;
-  },
-  actionCreators
-)(FriendHome);
->>>>>>> 256389179305d1f2210293e199b51ea2b860c17d
+export default FriendHome;
