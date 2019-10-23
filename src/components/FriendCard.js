@@ -32,7 +32,7 @@ function FriendCard({ newFriend }) {
     return (
         <Div>
             <Div1>
-                {newFriend.name[0]}
+                {newFriend.name[0].toUpperCase()}
             </Div1>
 
             <div>
