@@ -40,17 +40,19 @@ export const ItemContainer = styled.div`
 `;
 
 export const Button = styled.button`
+/* swapped the hover effect */
   padding: 0.25em 1em;
   width: 34%;
-  background: #ffffff;
+  background: #f35667;
   border: 1px solid #f35667;
+  margin-bottom:10px;
   box-sizing: border-box;
   border-radius: 5px;
-  color: #f35667;
+  color: #fff;
   margin-top: 4px;
   cursor: pointer;
   &:hover {
-    color: white;
-    background: #f35667;
+    color: #f35667;
+    background: white ;
   }
 `;
