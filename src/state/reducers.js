@@ -102,13 +102,44 @@ export const friendReducer = (state = initialFriend, action) => {
       return {
         ...state,
         data: action.payload
-      }
+      };
     case types.FETCH_FRIEND_FAILURE:
-      return{
+      return {
         ...state,
-        error:action.payload
-      }
+        error: action.payload
+      };
     default:
       return state;
   }
 };
+
+// const initialFriendItem = {
+//   data: {
+//     topNine: []
+//   },
+//   isFetching: false,
+//   error: ""
+// };
+
+// export const friendItemReducer = (state = initialFriendItem, action) => {
+//   switch (action.type) {
+//     case types.FETCHING_FRIEND_ITEM_START:
+//       return {
+//         ...state,
+//         isFetching: true
+//       };
+//     case types.FETCH_FRIEND_ITEM_SUCCESS:
+//       return {
+//         ...state,
+//         isFetching: false,
+//         data: action.payload
+//       };
+//     case types.FETCH_FRIEND_ITEM_FAILURE:
+//       return {
+//         ...state,
+//         error: action.payload
+//       };
+//     default:
+//       return state;
+//   }
+// };

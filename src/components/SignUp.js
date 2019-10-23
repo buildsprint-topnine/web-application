@@ -1,36 +1,35 @@
 import React, { useRef, useState } from "react";
 import axios from "axios";
-import { Link } from 'react-router-dom';
-import coffeeImage from '../coffee.png'
+import { Link } from "react-router-dom";
 
 const SignUp = props => {
   const nameRef = useRef();
   const emailRef = useRef();
   const passwordRef = useRef();
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   const validate = () => {
     let isError = false;
-    if (nameRef.current.value === '') {
+    if (nameRef.current.value === "") {
       setError("Please enter a valid Username!");
       isError = true;
     }
-    if (passwordRef.current.value === '') {
+    if (passwordRef.current.value === "") {
       setError("Please enter a valid password!");
       isError = true;
     }
-    if (emailRef.current.value === '') {
+    if (emailRef.current.value === "") {
       setError("Please enter a valid email!");
       isError = true;
     }
-    return isError
-  }
+    return isError;
+  };
 
   const submit = () => {
     let valid = validate();
     if (valid) {
-      return
+      return;
     }
     setLoading(true);
     axios
@@ -58,7 +57,7 @@ const SignUp = props => {
       </div>
       <section className="su-section">
         <h2>SignUp</h2>
-        <p style={{color: '#f35667'}}>{error}</p>
+        <p style={{ color: "#f35667" }}>{error}</p>
         <div className="mini-container">
           <p> Username </p>
           <input className="su-input" ref={nameRef} type="text" />
@@ -72,11 +71,16 @@ const SignUp = props => {
           <input className="su-input" ref={passwordRef} type="password" />
         </div>
         <div className="mini-container">
-          <button onClick={submit} className="su-form-button">{loading ? "Loading" : "Submit"}</button>
+          <button onClick={submit} className="su-form-button">
+            {loading ? "Loading" : "Submit"}
+          </button>
         </div>
-        <Link to="/"> <p>Log in instead</p> </Link>
+        <Link to="/">
+          {" "}
+          <p>Log in instead</p>{" "}
+        </Link>
       </section>
-    </div >
+    </div>
   );
 };
 export default SignUp;

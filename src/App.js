@@ -9,6 +9,7 @@ import Dashboard from "./components/DashBoard";
 import AddItem from "./components/AddItemForm";
 import Home from "./components/Home";
 import UpdatedItem from "./components/UpdatedItem";
+import FriendHome from "./components/FriendHome";
 
 function App() {
   return (
@@ -35,6 +36,11 @@ function App() {
         render={props => {
           return <UpdatedItem {...props} />;
         }}
+      />
+      <Route
+        exact
+        path="/dashboard/friends/:id/topnine"
+        component={FriendHome}
       />
     </div>
   );

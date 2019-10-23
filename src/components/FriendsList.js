@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import * as actionCreators from "../state/actionCreators";
 import { connect } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import FriendCard from "../components/FriendCard";
 import styled from "styled-components";
 import TopBarFriends from "../components/TopBarFriends";
@@ -19,9 +19,9 @@ const H2 = styled.h2`
 `;
 
 function FriendList(props) {
-  //console.log(props)
+  console.log(props);
   const { friendList, friend } = props;
-  //console.log(friend);
+  // console.log(friend);
 
   useEffect(() => {
     friendList();
@@ -29,13 +29,15 @@ function FriendList(props) {
 
   return (
     <Div>
-      {/* <TopBarFriends handle={friend}/> */}
+      {/* <TopBar/> */}
 
       <h2>Your Friends</h2>
       {friend.data.map(newFriend => (
-        <div className="mapped-friend" key={newFriend.id}>
-          <FriendCard newFriend={newFriend} />
-        </div>
+        <Link to={`/dashboard/friends/${newFriend.id}/topnine`}>
+          <div className="mapped-friend" key={newFriend.id}>
+            <FriendCard newFriend={newFriend} />
+          </div>
+        </Link>
       ))}
     </Div>
   );
