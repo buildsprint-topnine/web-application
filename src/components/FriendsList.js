@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import FriendCard from "../components/FriendCard";
 import styled from "styled-components";
-import TopBar from "../components/TopBar";
+import TopBarFriends from "../components/TopBarFriends";
 
 const Div = styled.div`
   flex: 1;

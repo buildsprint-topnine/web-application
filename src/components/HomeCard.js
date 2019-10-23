@@ -10,7 +10,7 @@ function HomeCard({ things }) {
   return (
     <div>
       <StyledDiv>
-        <img src={things.image_url ? things.image_url : url} alt="Cool" />
+        <img src={things.image_url ? things.image_url : url} alt="avatar" />
       </StyledDiv>
       <h2>Title: {things.title}</h2>
       <p>Description: {things.description}</p>
