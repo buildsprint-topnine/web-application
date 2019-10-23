@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import FriendCard from "../components/FriendCard";
 import styled from "styled-components";
 import TopBarFriends from "../components/TopBarFriends";
+import Loader from "react-loader-spinner";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 const Div = styled.div`
   flex: 1;
@@ -21,7 +23,7 @@ const H2 = styled.h2`
 function FriendList(props) {
   console.log(props);
   const { friendList, friend } = props;
-  // console.log(friend);
+  console.log(friend);
 
   useEffect(() => {
     friendList();
@@ -39,6 +41,13 @@ function FriendList(props) {
           </div>
         </Link>
       ))}
+
+      {friend.isFetching && (
+        <>
+          <h2>Loading...</h2>
+          <Loader type="TailSpin" color="#f35667" height={80} width={80} />
+        </>
+      )}
     </Div>
   );
 }
