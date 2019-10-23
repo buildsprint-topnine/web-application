@@ -3,8 +3,7 @@ import * as actionCreators from "../state/actionCreators";
 import { connect } from "react-redux";
 import HomeList from "./HomeList";
 import FriendList from "./FriendsList";
-import { Route, NavLink, Redirect } from "react-router-dom";
-import styled from "styled-components";
+import { Route, NavLink } from "react-router-dom";
 import Home from "./Home";
 
 function DashBoard(props) {
@@ -15,7 +14,6 @@ function DashBoard(props) {
   return (
     <div className="m-container">
       <div className="sideBar">
-       
         <NavLink exact to="/dashboard/home">
           <div className="sidebar-div">
             <h3>Home</h3>
@@ -28,7 +26,7 @@ function DashBoard(props) {
         </NavLink>
         <NavLink exact to="/" onClick={onLogout}>
           <div className="sidebar-div">
-            <h3 >Logout</h3>
+            <h3>Logout</h3>
           </div>
         </NavLink>
       </div>
@@ -52,7 +50,6 @@ function DashBoard(props) {
     </div>
   );
 }
-
 
 export default connect(
   state => {

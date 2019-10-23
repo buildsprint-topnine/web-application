@@ -79,6 +79,6 @@ const UpdatedItem = props => {
 };
 
 export default connect(state => {
-    console.log(state)
+  console.log(state);
   return state;
 })(UpdatedItem);
