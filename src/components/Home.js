@@ -31,7 +31,9 @@ function Home(props) {
       <DivStyle>
         <HomeCard things={state} />
       </DivStyle>
-      <NavLink to={`/update-item/${state.id}`}>Update Item</NavLink>
+      <NavLink to={`/update-item/${state.id}`}>
+        <Button>Update Item</Button>
+      </NavLink>
     </div>
   );
 }
@@ -40,9 +42,29 @@ export default connect(state => state)(Home);
 
 const DivStyle = styled.div`
   border: 2px solid red;
-  margin:10%;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 5%;
   align-content: center;
-  img{
-    border:2px solid green;
+  img {
+    border: 2px solid green;
+    margin-top:2px;
   }
+  h2 {
+    border: 2px solid green;
+  }
+  p {
+    border: 2px solid green;
+  }
+`;
+
+const Button = styled.button`
+  background: #f35667;
+  border-radius: 8px;
+  border: 2px solid #276fd6;
+  color: white;
+  padding: 0.25em 1em;
+  height: 40px;
+  width: 160px;
+  margin-top:10px;
 `;
