@@ -78,3 +78,27 @@ export function deleteItem(id) {
       );
   };
 }
+
+// export function updateMovie(id, data) {
+//   return function(dispatch) {
+//     axiosWithAuth()
+//       .put(
+//         `https://bw-my-top-nine.herokuapp.com/home/${id}/edit-top-nine`,
+//         data
+//       )
+//       .then(res => {
+//         debugger;
+//         dispatch({
+//           type: types.UPDATE_ITEM_SUCCESS,
+//           payload: res.data
+//         });
+//       })
+
+//       .catch(err => {
+//         dispatch({
+//           type: types.UPDATE_ITEM_FAILURE,
+//           payload: err
+//         });
+//       });
+//   };
+// }

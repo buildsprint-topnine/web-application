@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import axiosWithAuth from "../utils/axiosWithAuth";
 import { connect } from "react-redux";
-//const itemApi = "https://bw-my-top-nine.herokuapp.com/home/:id/edit-top-nine";
 
 const UpdatedItem = props => {
-  console.log(props);
-
   const initialList = {
     title: "",
     description: ""
@@ -36,10 +33,9 @@ const UpdatedItem = props => {
       )
       .then(res => {
         props.history.push("/dashboard/home");
-        //props.setMovies(res.data);
-      });
+      })
 
-    //.catch(err => console.log(err));
+      .catch(err => console.log(err));
   };
 
   return (
@@ -79,6 +75,6 @@ const UpdatedItem = props => {
 };
 
 export default connect(state => {
-    console.log(state)
+  console.log(state);
   return state;
 })(UpdatedItem);
