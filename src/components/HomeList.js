@@ -11,7 +11,8 @@ import {
   ItemCard,
   Button
 } from "../styles/HomeListStyles";
-
+import Loader from "react-loader-spinner";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import TopBar from "./TopBar";
 
 function HomeList(props) {
@@ -33,7 +34,13 @@ function HomeList(props) {
 
       <Div2>
         <P style={{ fontFamily: "Ubuntu, sans-serif" }}>
-          Hey {item.data.name}, Welcome!{" "}
+          Hey{" "}
+          {item.data.name ? (
+            <span>
+              {item.data.name.charAt(0).toUpperCase() + item.data.name.slice(1)}
+            </span>
+          ) : null}
+          , Welcome!{" "}
         </P>
         <NavLink to="/home/additem">
           <button className="lg-form-button">Add Your Favs!</button>
@@ -57,6 +64,14 @@ function HomeList(props) {
           </ItemCard>
         ))}
       </ItemContainer>
+      <div>
+        {item.isFetching && (
+          <>
+            <h2>Loading...</h2>
+            <Loader type="TailSpin" color="#f35667" height={80} width={80} />
+          </>
+        )}
+      </div>
     </Div>
   );
 }
