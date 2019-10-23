@@ -95,23 +95,25 @@ export function deleteItem(id) {
   };
 }
 
-// export function fetchFriendsItems(id) {
+// export function updateMovie(id, data) {
 //   return function(dispatch) {
-//     dispatch({
-//       type: types.FETCHING_FRIEND_ITEM_START
-//     });
 //     axiosWithAuth()
-//       .get(`https://bw-my-top-nine.herokuapp.com/users/${id}/top-nine`)
+//       .put(
+//         `https://bw-my-top-nine.herokuapp.com/home/${id}/edit-top-nine`,
+//         data
+//       )
 //       .then(res => {
+//         debugger;
 //         dispatch({
-//           type: types.FETCH_FRIEND_ITEM_SUCCESS,
+//           type: types.UPDATE_ITEM_SUCCESS,
 //           payload: res.data
 //         });
 //       })
-//       .catch(error => {
+
+//       .catch(err => {
 //         dispatch({
-//           type: types.FETCH_FRIEND_ITEM_FAILURE,
-//           payload: error
+//           type: types.UPDATE_ITEM_FAILURE,
+//           payload: err
 //         });
 //       });
 //   };

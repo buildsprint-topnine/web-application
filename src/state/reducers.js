@@ -75,6 +75,11 @@ export const itemReducer = (state = initialItem, action) => {
         ...state,
         error: action.payload
       };
+    case types.UPDATE_ITEM_SUCCESS:
+      return {
+        ...state, 
+        data: state.data.topNine.find(item=>item.id === action.payload)
+      };
     default:
       return state;
   }

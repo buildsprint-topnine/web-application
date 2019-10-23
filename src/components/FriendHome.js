@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import * as actionCreators from "../state/actionCreators";
-import { connect } from "react-redux";
-import { Route, NavLink } from "react-router-dom";
+// import * as actionCreators from "../state/actionCreators";
+// import { connect } from "react-redux";
+// import { Route, NavLink } from "react-router-dom";
 import axiosWithAuth from "../utils/axiosWithAuth";
-import styled from "styled-components";
+// import styled from "styled-components";
 
 // function FriendHome(props) {
 //   const { fetchFriendsItems, friendItem } = props;
@@ -29,7 +29,7 @@ import styled from "styled-components";
 
 const initialFriendItem = [];
 
-function FriendHome(props) {
+const FriendHome = props => {
   const [topNine, setTopNine] = useState(initialFriendItem);
   const id = props.match.params.id;
   console.log(props);
@@ -43,7 +43,11 @@ function FriendHome(props) {
       .catch(err => {
         console.log(err.response);
       });
-  }, []);
+  }, [id]);
+
+  if (!topNine) {
+    return <div>Loading Friend's Item information...</div>;
+  }
 
   return (
     <div>
@@ -55,7 +59,7 @@ function FriendHome(props) {
       ))}
     </div>
   );
-}
+};
 
 function FriendItemCard({ item }) {
   return (

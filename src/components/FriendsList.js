@@ -33,7 +33,7 @@ function FriendList(props) {
 
       <H2>Your Friends</H2>
       {friend.data.map(newFriend => (
-        <Link to="/dashboard/friends/:id/topnine">
+        <Link to={`/dashboard/friends/${newFriend.id}/topnine`}>
           <div className="mapped-friend" key={newFriend.id}>
             <FriendCard newFriend={newFriend} />
           </div>
