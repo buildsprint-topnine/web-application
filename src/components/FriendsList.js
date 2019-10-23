@@ -19,18 +19,19 @@ color: #4183c6;
 `;
 
 function FriendList(props) {
-  const { friendList, friend } = props;
-  console.log(friend);
-  console.log(props);
+  console.log(props)
+  const { friendList, friend  } = props;
+  // console.log(friend);
+
 
   useEffect(() => {
     friendList();
   }, [friendList]);
 
   return <Div>
-    <TopBar/>
+    {/* <TopBar/> */}
 
-    <H2>Your Friends</H2>
+    <h2>Your Friends</h2>
     {
       friend.data.map(newFriend => (
         <div className="mapped-friend" key={newFriend.id}>
@@ -43,7 +44,6 @@ function FriendList(props) {
 
 export default connect(
   state => {
-    
     return state;
   },
   actionCreators

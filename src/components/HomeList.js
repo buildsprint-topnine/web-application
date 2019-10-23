@@ -55,9 +55,10 @@ const Button = styled.button`
 `;
 
 function HomeList(props) {
+  //debugger;
   const { fetchItems, item, deleteItem } = props;
 
-  console.log(props);
+  console.log(item);
 
   useEffect(() => {
     fetchItems();
@@ -71,10 +72,10 @@ function HomeList(props) {
   return (
     <Div>
       {/* imported topbar component */}
-      <TopBar />
+      <TopBar handle={item} />
 
       <Div2>
-        <P>Hey James, lorem ipsum lorem ipsum </P>
+        <P>Hey {item.data.name}, Welcome! </P>
         <NavLink to="/home/additem">
           <button className="lg-form-button">Add Your Favs!</button>
         </NavLink>
