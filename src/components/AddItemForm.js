@@ -3,6 +3,97 @@ import { connect } from "react-redux";
 import { addItem } from "../state/actionCreators";
 import styled from "styled-components";
 
+function AddItem(props) {
+  const [friend, setFriend] = useState({
+    title: "",
+    description: "",
+    image_url: ""
+  });
+
+  function inputChange(e) {
+    return setFriend({
+      ...friend,
+      [e.target.name]: e.target.value
+    });
+  }
+
+  function submitForm(e) {
+    e.preventDefault();
+    props.addItem(friend);
+    props.history.push("/dashboard/home");
+
+    return setFriend({
+      title: "",
+      description: "",
+      image_url: ""
+    });
+  }
+
+  return (
+    <Section>
+      <MainDiv>
+        <h1 style={{color:'#1f43d4'}}>Add An Item</h1>
+        <form onSubmit={submitForm}>
+          <TitleImage>
+            <Div>
+              <Label>
+                <p>Item Title</p>
+                <br />
+                <Input
+                  name="title"
+                  placeholder="title"
+                  value={friend.title}
+                  onChange={inputChange}
+                />
+              </Label>
+            </Div>
+            <br />
+
+            <Div>
+              <Label>
+                <p>Image URL</p>
+                <br />
+                <Input
+                  name="image_url"
+                  placeholder="Image Url"
+                  value={friend.image_url}
+                  onChange={inputChange}
+                />
+              </Label>
+            </Div>
+          </TitleImage>
+
+          <br />
+          <div>
+            <Desc>
+              <Label>
+                <p>Item Decription</p>
+                <br />
+                <Input
+                  name="description"
+                  placeholder="Description"
+                  value={friend.description}
+                  onChange={inputChange}
+                />
+              </Label>
+            </Desc>
+          </div>
+          <br />
+          <Div>
+            <Button className="button" type="submit">
+              Submit
+            </Button>
+          </Div>
+        </form>
+      </MainDiv>
+    </Section>
+  );
+}
+export default connect(
+  state => state,
+  { addItem }
+)(AddItem);
+
 // added styles
 
 const Input = styled.input`
@@ -34,13 +125,14 @@ const Label = styled.label`
 `;
 
 const Button = styled.button`
-  background: #276fd6;
-  border-radius: 5px;
+  background: #F35667;
+  border-radius: 8px;
   border: 2px solid #276fd6;
   color: white;
   padding: 0.25em 1em;
   height: 40px;
-  width: 100%;
+  width: 160px;
+  margin-left: 100px;
 `;
 
 const Div = styled.div`
@@ -60,74 +152,38 @@ const Section = styled.section`
   height: 100vh;
 `;
 
-function AddItem(props) {
-  const [friend, setFriend] = useState({
-    title: "",
-    description: ""
-  });
+const TitleImage = styled.div`
+  display:flex;
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 0.4285em;
 
-  function inputChange(e) {
-    return setFriend({
-      ...friend,
-      [e.target.name]: e.target.value
-    });
+  p {
+    color: #1f43d4;
+    margin-bottom: 1px;
   }
 
-  function submitForm(e) {
-    e.preventDefault();
-    props.addItem(friend);
-    props.history.push("/dashboard/home");
+  input {
+    margin-top: 1px;
+  }
+`;
 
-    return setFriend({
-      title: "",
-      description: ""
-    });
+const Desc = styled.div`
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 0.4285em;
+
+  p {
+    color: #1f43d4;
+    margin-bottom: 1px;
+    margin-left: 10px
   }
 
-  return (
-    <Section>
-      <MainDiv>
-        <h1>Add An Item</h1>
-        <form onSubmit={submitForm}>
-          <Div>
-            <Label>
-              Item Title
-              <br />
-              <Input
-                name="title"
-                placeholder="title"
-                value={friend.title}
-                onChange={inputChange}
-              />
-            </Label>
-          </Div>
-          <br />
-
-          <Div>
-            <Label>
-              Item Decription
-              <br />
-              <Input
-                name="description"
-                placeholder="Description"
-                value={friend.description}
-                onChange={inputChange}
-              />
-            </Label>
-          </Div>
-
-          <br />
-          <Div>
-            <Button className="button" type="submit">
-              Submit
-            </Button>
-          </Div>
-        </form>
-      </MainDiv>
-    </Section>
-  );
-}
-export default connect(
-  state => state,
-  { addItem }
-)(AddItem);
+  input {
+    margin-top: 1px;
+  }
+`;

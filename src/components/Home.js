@@ -3,6 +3,7 @@ import axiosWithAuth from "../utils/axiosWithAuth";
 import HomeCard from "./HomeCard";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
+import styled from "styled-components";
 
 function Home(props) {
   const [state, setState] = useState({});
@@ -27,10 +28,21 @@ function Home(props) {
 
   return (
     <div>
-      <HomeCard things={state} />
+      <DivStyle>
+        <HomeCard things={state} />
+      </DivStyle>
       <NavLink to={`/update-item/${state.id}`}>Update Item</NavLink>
     </div>
   );
 }
 
 export default connect(state => state)(Home);
+
+const DivStyle = styled.div`
+  border: 2px solid red;
+  margin:10%;
+  align-content: center;
+  img{
+    border:2px solid green;
+  }
+`;

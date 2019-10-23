@@ -25,6 +25,7 @@ const ItemCard = styled.div`
   /* border: 1px solid blue; */
   flex-basis: 300px;
   flex-shrink: 0;
+  flex-grow:0;
   width: 38%;
   margin: 1% 3%;
   box-shadow: 0px 3px 8px rgba(56, 105, 160, 0.25);
