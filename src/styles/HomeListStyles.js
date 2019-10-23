@@ -17,7 +17,7 @@ export const P = styled.p`
 `;
 
 export const ItemCard = styled.div`
-  /* border: 1px solid blue; */
+  border: 1px solid white;
   flex-basis: 300px;
   flex-shrink: 0;
   flex-grow: 0;
