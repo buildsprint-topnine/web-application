@@ -65,11 +65,11 @@ const SignUp = props => {
         </div>
         <div className="mini-container">
           <p>  Email  </p>
-          <input className="su-input" ref={emailRef} type="text" />
+          <input className="su-input" ref={emailRef} type="email" />
         </div>
         <div className="mini-container">
           <p> Password </p>
-          <input className="su-input" ref={passwordRef} type="text" />
+          <input className="su-input" ref={passwordRef} type="password" />
         </div>
         <div className="mini-container">
           <button onClick={submit} className="su-form-button">{loading ? "Loading" : "Submit"}</button>
