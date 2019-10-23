@@ -48,7 +48,7 @@ const DivStyle = styled.div`
   align-content: center;
   img {
     border: 2px solid green;
-    margin-top:2px;
+    margin-top:4px;
   }
   h2 {
     border: 2px solid green;

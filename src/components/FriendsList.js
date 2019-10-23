@@ -19,28 +19,27 @@ const H2 = styled.h2`
 `;
 
 function FriendList(props) {
-  const { friendList, friend } = props;
-  console.log(friend);
-  console.log(props);
+  console.log(props)
+  const { friendList, friend  } = props;
+  // console.log(friend);
+
 
   useEffect(() => {
     friendList();
   }, [friendList]);
 
-  return (
-    <Div>
-      <TopBar />
+  return <Div>
+    {/* <TopBar/> */}
 
-      <H2>Your Friends</H2>
-      {friend.data.map(newFriend => (
-        <Link to={`/dashboard/friends/${newFriend.id}/topnine`}>
-          <div className="mapped-friend" key={newFriend.id}>
-            <FriendCard newFriend={newFriend} />
-          </div>
-        </Link>
-      ))}
-    </Div>
-  );
+    <h2>Your Friends</h2>
+    {
+      friend.data.map(newFriend => (
+        <div className="mapped-friend" key={newFriend.id}>
+          <FriendCard newFriend={newFriend} />
+        </div>
+      ))
+    }
+  </Div>;
 }
 
 export default connect(
