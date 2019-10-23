@@ -1,31 +1,32 @@
 import React, { useState, useEffect } from "react";
 // import * as actionCreators from "../state/actionCreators";
 // import { connect } from "react-redux";
-// import { Route, NavLink } from "react-router-dom";
+import FriendItemCard from "./FriendItemCard";
 import axiosWithAuth from "../utils/axiosWithAuth";
-// import styled from "styled-components";
+import styled from "styled-components";
 
-// function FriendHome(props) {
-//   const { fetchFriendsItems, friendItem } = props;
-//   //debugger;
-//   console.log(props);
+const Div = styled.div`
+  flex: 1;
+  margin-left: 200px;
+  /* margin-right: 30px; */
+  align-items: center;
+`;
 
-//   useEffect(() => {
-//     //debugger;
-//     fetchFriendsItems();
-//   }, [fetchFriendsItems]);
+const ItemCard = styled.div`
+  flex-basis: 300px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  width: 38%;
+  margin: 1% 3%;
+  box-shadow: 0px 3px 8px rgba(56, 105, 160, 0.25);
+  border-radius: 4px;
+`;
 
-//   return (
-//     <div>
-//       <h2>Friend's Top 9</h2>
-//       {friendItem.data.topNine.map(char => (
-//         <div key={char.id}>
-//           <HomeCard things={char} />
-//         </div>
-//       ))}
-//     </div>
-//   );
-// }
+const ItemContainer = styled.div`
+  /* border: 2px solid red; */
+  display: flex;
+  flex-wrap: wrap;
+`;
 
 const initialFriendItem = [];
 
@@ -50,34 +51,18 @@ const FriendHome = props => {
   }
 
   return (
-    <div>
-      <h2>Friend's Top 9</h2>
-      {topNine.map(item => (
-        <div key={item.id}>
-          <FriendItemCard item={item} />
-        </div>
-      ))}
-    </div>
+    <Div>
+      <ItemContainer>
+        {topNine.map(item => (
+          <ItemCard key={item.id}>
+            <div>
+              <FriendItemCard item={item} />
+            </div>
+          </ItemCard>
+        ))}
+      </ItemContainer>
+    </Div>
   );
 };
-
-function FriendItemCard({ item }) {
-  return (
-    <div>
-      <div>
-        <h2>{item.title}</h2>
-        <p>{item.description}</p>
-      </div>
-    </div>
-  );
-}
-
-// export default connect(
-//   state => {
-//     console.log(state);
-//     return state;
-//   },
-//   actionCreators
-// )(FriendHome);
 
 export default FriendHome;
