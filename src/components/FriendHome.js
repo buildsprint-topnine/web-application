@@ -7,9 +7,10 @@ import styled from "styled-components";
 
 const Div = styled.div`
   flex: 1;
-  margin-left: 200px;
-  /* margin-right: 30px; */
-  align-items: center;
+  flex-direction: row;
+  position: absolute;
+  top: 10%;
+  left: 20%;
 `;
 
 const ItemCard = styled.div`
