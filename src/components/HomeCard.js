@@ -26,8 +26,8 @@ export default connect(
 )(HomeCard);
 
 const StyledDiv = styled.div`
-  max-width: 300px;
+  max-width: 100%;
   img {
-    max-width: 200px;
+    max-width: 80%;
   }
 `;

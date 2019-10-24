@@ -31,7 +31,7 @@ export const Label = styled.label`
 export const Button = styled.button`
   background: #F35667;
   border-radius: 8px;
-  border: 2px solid #276fd6;
+  border: 2px solid #F35667;
   color: white;
   padding: 0.25em 1em;
   height: 40px;
@@ -89,5 +89,6 @@ export const Desc = styled.div`
 
   input {
     margin-top: 1px;
+    width:90%;
   }
 `;

@@ -41,7 +41,7 @@ function AddItem(props) {
           <TitleImage>
             <Div>
               <Label>
-                <p>Item Title</p>
+                <p>Title</p>
                 <br />
                 <Input
                   name="title"
@@ -69,9 +69,9 @@ function AddItem(props) {
           <div>
             <Desc>
               <Label>
-                <p>Item Decription</p>
+                <p>Description</p>
                 <br />
-                <Input
+                <Input className="input-description"
                   name="description"
                   placeholder="Description"
                   value={friend.description}
@@ -83,7 +83,7 @@ function AddItem(props) {
           <br />
           <Div>
             <Button className="button" type="submit">
-              Submit
+              Save
             </Button>
           </Div>
         </form>
