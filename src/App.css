@@ -5,6 +5,7 @@
   text-align: center;
   width: 100%;
   font-family: Ubuntu;
+  max-height: 100vh;
 }
 
 .App-logo {
