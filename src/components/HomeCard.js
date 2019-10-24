@@ -11,8 +11,8 @@ function HomeCard({ things }) {
       <StyledDiv>
         <img src={things.image_url ? things.image_url : url} alt="avatar" />
       </StyledDiv>
-      <H1>{things.title}</H1>
-      <H2>{things.description}</H2>
+      <h1>{things.title}</h1>
+      <h2>{things.description}</h2>
     </div>
   );
 }
@@ -31,10 +31,10 @@ const StyledDiv = styled.div`
   }
 `;
 
-const H2 = styled.h2`
-margin-left: 50px;
-`;
+// const H2 = styled.h2`
+// margin-left: 50px;
+// `;
 
-const H1 = styled.h1`
-margin-left: 50px;
-`;
+// const H1 = styled.h1`
+// margin-left: 50px;
+// `;
