@@ -50,7 +50,6 @@ export function friendList() {
     axiosWithAuth()
       .get(`https://bw-my-top-nine.herokuapp.com/users`)
       .then(res => {
-        console.log(res);
         dispatch({
           type: types.FETCH_FRIEND_SUCCESS,
           payload: res.data
@@ -94,27 +93,3 @@ export function deleteItem(id) {
       );
   };
 }
-
-// export function updateMovie(id, data) {
-//   return function(dispatch) {
-//     axiosWithAuth()
-//       .put(
-//         `https://bw-my-top-nine.herokuapp.com/home/${id}/edit-top-nine`,
-//         data
-//       )
-//       .then(res => {
-//         debugger;
-//         dispatch({
-//           type: types.UPDATE_ITEM_SUCCESS,
-//           payload: res.data
-//         });
-//       })
-
-//       .catch(err => {
-//         dispatch({
-//           type: types.UPDATE_ITEM_FAILURE,
-//           payload: err
-//         });
-//       });
-//   };
-// }

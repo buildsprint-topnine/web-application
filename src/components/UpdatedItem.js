@@ -44,7 +44,7 @@ const UpdatedItem = props => {
         props.history.push("/dashboard/home");
       })
 
-      .catch(err => console.log(err));
+      .catch(err => err);
   };
 
   return (
@@ -108,6 +108,5 @@ const UpdatedItem = props => {
 };
 
 export default connect(state => {
-  console.log(state);
   return state;
 })(UpdatedItem);

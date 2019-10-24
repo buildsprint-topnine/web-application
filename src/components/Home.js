@@ -17,7 +17,7 @@ function Home(props) {
       .then(res => {
         return setState(res.data);
       })
-      .catch(err => console.log(err.response));
+      .catch(err => err.response);
   };
 
   if (!state) {
@@ -39,29 +39,27 @@ function Home(props) {
 export default connect(state => state)(Home);
 
 const DivStyle = styled.div`
-   
-    -ms-flex-line-pack: center;
-    width: 500px;
-    margin: auto;
-    margin-top: 30px;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: center;
+  -ms-flex-line-pack: center;
+  width: 500px;
+  margin: auto;
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
 
-    img{
+  img {
     width: 400px;
     margin-left: 50px;
-    }
- `;
+  }
+`;
 
 const Button = styled.button`
   background: #f35667;
   border-radius: 8px;
   border: 2px solid #f35667;
   color: white;
-  /* padding: 0.25em 1em; */
   height: 40px;
   width: 160px;
   margin-top: 10px;
