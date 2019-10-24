@@ -39,29 +39,29 @@ function Home(props) {
 export default connect(state => state)(Home);
 
 const DivStyle = styled.div`
-  border: 5px solid black;
-  margin-left: 29%;
-  margin-right: 20%;
-  margin-top: 5%;
-  border-radius: 8px;
-  align-content: center;
-  background: rgb(214, 202, 245);
-  opacity: 0.9;
-  box-shadow: 2px 2px;
-  width: 40%;
-  display: flex;
-  justify-content: center;
-  img {
-    margin-top: 2px;
-  }
-`;
+   
+    -ms-flex-line-pack: center;
+    width: 500px;
+    margin: auto;
+    margin-top: 30px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+
+    img{
+    width: 400px;
+    margin-left: 50px;
+    }
+ `;
 
 const Button = styled.button`
   background: #f35667;
   border-radius: 8px;
-  border: 2px solid #276fd6;
+  border: 2px solid #f35667;
   color: white;
-  padding: 0.25em 1em;
+  /* padding: 0.25em 1em; */
   height: 40px;
   width: 160px;
   margin-top: 10px;

@@ -31,9 +31,9 @@ export const Label = styled.label`
 export const Button = styled.button`
   background: #f35667;
   border-radius: 8px;
-  border: 2px solid #276fd6;
+  border: 2px solid #f35667;
   color: white;
-  padding: 0.25em 1em;
+  /* padding: 0.25em 1em; */
   height: 40px;
   width: 160px;
   margin-left: 100px;
@@ -52,8 +52,9 @@ export const Div = styled.div`
 `;
 
 export const Section = styled.section`
-  background: linear-gradient(180deg, #1f43d4 0%, rgba(31, 67, 212, 0.5) 100%);
-  height: 100vh;
+  /* background: linear-gradient(180deg, #1f43d4 0%, rgba(31, 67, 212, 0.5) 100%);
+  height: 100vh; */
+  */
 `;
 
 export const TitleImage = styled.div`
