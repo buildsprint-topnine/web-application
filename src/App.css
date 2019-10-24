@@ -131,6 +131,15 @@
   background: white;
 }
 
+.lg-form-button:disabled {
+  border: none;
+  background: white;
+  color: white;
+}
+.lg-form-button:disabled:hover{
+  cursor: default;
+}
+
 .lg-mini-container {
   margin-left: 10px;
   margin-right: 10px;
