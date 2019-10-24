@@ -11,8 +11,8 @@ function HomeCard({ things }) {
       <StyledDiv>
         <img src={things.image_url ? things.image_url : url} alt="avatar" />
       </StyledDiv>
-      <H1>{things.title}</H1>
-      <H2>{things.description}</H2>
+      <h3>{things.title}</h3>
+      <p>{things.description}</p>
     </div>
   );
 }
@@ -29,12 +29,4 @@ const StyledDiv = styled.div`
   img {
     max-width: 80%;
   }
-`;
-
-const H2 = styled.h2`
-margin-left: 50px;
-`;
-
-const H1 = styled.h1`
-margin-left: 50px;
 `;
