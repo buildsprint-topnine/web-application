@@ -15,7 +15,8 @@ const bigReducer = combineReducers({
   register: reducers.registerReducer,
   login: reducers.loginReducer,
   friend: reducers.friendReducer,
-  item: reducers.itemReducer
+  item: reducers.itemReducer,
+  update:reducers.updateReducer
   // friendItem: reducers.friendItemReducer
 });
 

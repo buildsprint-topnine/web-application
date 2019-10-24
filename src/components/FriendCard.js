@@ -26,8 +26,6 @@ const Div1 = styled.div`
 `;
 
 function FriendCard({ newFriend }) {
-  //console.log(newFriend);
-
   return (
     <Div>
       <Div1>{newFriend.name[0].toUpperCase()}</Div1>
@@ -42,7 +40,6 @@ function FriendCard({ newFriend }) {
 
 export default connect(
   state => {
-    //console.log(state);
     return state;
   },
   actionCreators

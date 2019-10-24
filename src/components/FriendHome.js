@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import * as actionCreators from "../state/actionCreators";
-// import { connect } from "react-redux";
 import FriendItemCard from "./FriendItemCard";
 import axiosWithAuth from "../utils/axiosWithAuth";
 import styled from "styled-components";
@@ -24,7 +22,6 @@ const ItemCard = styled.div`
 `;
 
 const ItemContainer = styled.div`
-  /* border: 2px solid red; */
   display: flex;
   flex-wrap: wrap;
 `;
@@ -34,7 +31,6 @@ const initialFriendItem = [];
 const FriendHome = props => {
   const [topNine, setTopNine] = useState(initialFriendItem);
   const id = props.match.params.id;
-  console.log(props);
 
   useEffect(() => {
     axiosWithAuth()
@@ -42,9 +38,7 @@ const FriendHome = props => {
       .then(res => {
         return setTopNine(res.data);
       })
-      .catch(err => {
-        console.log(err.response);
-      });
+      .catch(err => err.response);
   }, [id]);
 
   if (!topNine) {

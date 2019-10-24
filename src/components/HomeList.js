@@ -29,7 +29,6 @@ function HomeList(props) {
 
   return (
     <Div>
-      {/* imported topbar component */}
       <TopBar handle={item} />
 
       <Div2>
@@ -43,7 +42,7 @@ function HomeList(props) {
           , Welcome!{" "}
         </P>
         <NavLink to="/home/additem">
-          <button className="lg-form-button">Add Your Favs!</button>
+          <button className="lg-form-button">Add Item</button>
         </NavLink>
       </Div2>
       <ItemContainer>

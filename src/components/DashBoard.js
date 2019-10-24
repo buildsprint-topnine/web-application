@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import HomeList from "./HomeList";
 import FriendList from "./FriendsList";
 import { Route, NavLink } from "react-router-dom";
-import Home from "./Home";
 
 function DashBoard(props) {
   const onLogout = () => {
@@ -30,7 +29,6 @@ function DashBoard(props) {
           </div>
         </NavLink>
       </div>
-
       <Route
         exact
         path="/dashboard/home"
@@ -40,12 +38,6 @@ function DashBoard(props) {
         exact
         path="/dashboard/friends"
         render={props => <FriendList {...props} />}
-      />
-      <Route
-        path="/movies/:id"
-        render={props => {
-          return <Home {...props} />;
-        }}
       />
     </div>
   );
