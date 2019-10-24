@@ -21,9 +21,9 @@ function FriendList(props) {
   return (
     <Div>
       <h2>Your Friends</h2>
-      {friend.data.map(newFriend => (
+      {friend.data.map((newFriend, index )=> (
         <Link to={`/dashboard/friends/${newFriend.id}/topnine`}>
-          <div className="mapped-friend" key={newFriend.id}>
+          <div className="mapped-friend" key={index}>
             <FriendCard newFriend={newFriend} />
           </div>
         </Link>
