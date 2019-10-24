@@ -8,16 +8,18 @@ import {
   Div2,
   P,
   ItemContainer,
-  ItemCard,
-  Button
+  ItemCard
 } from "../styles/HomeListStyles";
 import Loader from "react-loader-spinner";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import TopBar from "./TopBar";
+import DeleteIcon from "@material-ui/icons/Delete";
+import IconButton from "@material-ui/core/IconButton";
+import Tooltip from "@material-ui/core/Tooltip";
 
 function HomeList(props) {
   const { fetchItems, item, deleteItem } = props;
-
+  console.log(props);
   useEffect(() => {
     fetchItems();
   }, [fetchItems]);
@@ -42,7 +44,12 @@ function HomeList(props) {
           , Welcome!{" "}
         </P>
         <NavLink to="/home/additem">
-          <button className="lg-form-button">Add Item</button>
+          <button
+            disabled={item.data.topNine.length === 9 ? true : false}
+            className="lg-form-button"
+          >
+            Add Item
+          </button>
         </NavLink>
       </Div2>
       <ItemContainer>
@@ -51,13 +58,17 @@ function HomeList(props) {
             <div>
               <NavLink to={`/item/${char.id}`}>
                 <HomeCard things={char} />
-                <Button
-                  onClick={function(e) {
-                    return delItem(e, char.id);
-                  }}
-                >
-                  Delete
-                </Button>
+                <Tooltip title="Delete">
+                  <IconButton
+                    aria-label="Delete"
+                    onClick={function(e) {
+                      return delItem(e, char.id);
+                    }}
+                  >
+                    {" "}
+                    <DeleteIcon color="error" fontSize="large" />
+                  </IconButton>
+                </Tooltip>
               </NavLink>
             </div>
           </ItemCard>

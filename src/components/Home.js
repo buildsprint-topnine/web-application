@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-
 import HomeCard from "./HomeCard";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
