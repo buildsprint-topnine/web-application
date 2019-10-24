@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 function HomeCard({ things }) {
   const url =
-    "https://images.unsplash.com/photo-1476611317561-60117649dd94?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80";
+    "https://images.unsplash.com/photo-1515578706925-0dc1a7bfc8cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60";
   return (
     <div>
       <StyledDiv>
