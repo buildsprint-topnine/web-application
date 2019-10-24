@@ -33,9 +33,10 @@ function App() {
       />
       <Route
         path="/update-item/:id"
-        render={props => {
-          return <UpdatedItem {...props} />;
-        }}
+        component={UpdatedItem}
+        // render={props => {
+        //   return <UpdatedItem {...props} />;
+        // }}
       />
       <Route
         exact

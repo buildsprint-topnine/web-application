@@ -93,3 +93,24 @@ export function deleteItem(id) {
       );
   };
 }
+
+export function fetchItemsById(id) {
+  return function(dispatch) {
+    axiosWithAuth()
+      .get(`https://bw-my-top-nine.herokuapp.com/home/${id}`)
+      .then(res =>
+        dispatch({
+          type: types.UPDATE_ITEM_SUCCESS,
+          payload: res.data
+        })
+      )
+      .catch(error =>
+        dispatch({
+          type: types.UPDATE_ITEM_FAILURE,
+          payload: error
+        })
+      );
+  };
+}
+
+

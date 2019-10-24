@@ -4,39 +4,38 @@ import HomeCard from "./HomeCard";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import styled from "styled-components";
+import * as actionCreators from "../state/actionCreators";
 
-function Home(props) {
-  const [state, setState] = useState({});
+function Home({ fetchItemsById, match, update }) {
+  console.log(update);
+
   useEffect(() => {
-    fetchMovie(props.match.params.id);
-  }, [props.match.params.id]);
+    fetchItemsById(match.params.id);
+  }, [match.params.id, fetchItemsById]);
 
-  const fetchMovie = id => {
-    axiosWithAuth()
-      .get(`https://bw-my-top-nine.herokuapp.com/home/${id}`)
-      .then(res => {
-        return setState(res.data);
-      })
-      .catch(err => err.response);
-  };
-
-  if (!state) {
+  if (!update.data) {
     return <div>Loading information...</div>;
   }
 
   return (
     <div className="update-container">
       <DivStyle>
-        <HomeCard things={state} />
+        <HomeCard things={update.data} />
       </DivStyle>
-      <NavLink to={`/update-item/${state.id}`}>
+      <NavLink to={`/update-item/${update.data.id}`}>
         <Button>Update Item</Button>
       </NavLink>
     </div>
   );
 }
 
-export default connect(state => state)(Home);
+export default connect(
+  state => {
+    console.log(state);
+    return state;
+  },
+  actionCreators
+)(Home);
 
 const DivStyle = styled.div`
   -ms-flex-line-pack: center;

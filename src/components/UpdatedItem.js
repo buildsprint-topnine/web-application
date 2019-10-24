@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axiosWithAuth from "../utils/axiosWithAuth";
 import { connect } from "react-redux";
+import * as actionCreators from "../state/actionCreators";
 import {
   Input,
   MainDiv,
@@ -13,13 +14,30 @@ import {
 } from "../styles/UpdatedItemStyles";
 
 const UpdatedItem = props => {
+
+  const { fetchItemsById, match, update, } = props
+  console.log(update)
+//debugger;
   const initialList = {
     title: "",
+    image_url:"",
     description: ""
   };
   const [updateId, setUpdateId] = useState(initialList);
 
-  const id = props.match.params.id;
+  console.log(props);
+  const id = match.params.id;
+
+  useEffect(() => {
+    fetchItemsById(id)
+    
+  }, []);
+
+  useEffect(()=>{
+    setUpdateId({
+      ...update.data
+    })
+  }, [update.data])
 
   const handleChange = e => {
     e.preventDefault();
@@ -107,6 +125,10 @@ const UpdatedItem = props => {
   );
 };
 
-export default connect(state => {
-  return state;
-})(UpdatedItem);
+export default connect(
+  state => {
+    console.log(state);
+    return state;
+  },
+  actionCreators
+)(UpdatedItem);

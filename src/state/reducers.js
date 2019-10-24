@@ -75,11 +75,11 @@ export const itemReducer = (state = initialItem, action) => {
         ...state,
         error: action.payload
       };
-    case types.UPDATE_ITEM_SUCCESS:
-      return {
-        ...state, 
-        data: state.data.topNine.find(item=>item.id === action.payload)
-      };
+    // case types.UPDATE_ITEM_SUCCESS:
+    //   return {
+    //     ...state,
+    //     data: state.data.topNine.find(item => item.id === action.payload)
+    //   };
     default:
       return state;
   }
@@ -113,33 +113,30 @@ export const friendReducer = (state = initialFriend, action) => {
   }
 };
 
-// const initialFriendItem = {
-//   data: {
-//     topNine: []
-//   },
-//   isFetching: false,
-//   error: ""
-// };
+const initialUpdate = {
+  data: [],
+  isFetching: false,
+  error: ""
+};
 
-// export const friendItemReducer = (state = initialFriendItem, action) => {
-//   switch (action.type) {
-//     case types.FETCHING_FRIEND_ITEM_START:
-//       return {
-//         ...state,
-//         isFetching: true
-//       };
-//     case types.FETCH_FRIEND_ITEM_SUCCESS:
-//       return {
-//         ...state,
-//         isFetching: false,
-//         data: action.payload
-//       };
-//     case types.FETCH_FRIEND_ITEM_FAILURE:
-//       return {
-//         ...state,
-//         error: action.payload
-//       };
-//     default:
-//       return state;
-//   }
-// };
+export const updateReducer = (state = initialUpdate, action) => {
+  switch (action.type) {
+    case types.UPDATE_ITEM_START:
+      return {
+        ...state,
+        isFetching: true
+      };
+    case types.UPDATE_ITEM_SUCCESS:
+      return {
+        ...state,
+        data: action.payload
+      };
+    case types.UPDATE_ITEM_FAILURE:
+      return {
+        ...state,
+        error: action.payload
+      };
+    default:
+      return state;
+  }
+};
