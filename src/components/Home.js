@@ -44,7 +44,14 @@ const DivStyle = styled.div`
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: center;
-
+  h3 {
+    font-size: 36px;
+    color: #4183c4;
+  }
+  p {
+    font-size: 20px;
+    color: #4183c4;
+  }
   img {
     width: 400px;
     margin-left: 50px;
@@ -58,5 +65,11 @@ const Button = styled.button`
   color: white;
   height: 40px;
   width: 160px;
-  margin-top: 10px;
+  margin-top: 20px;
+  margin-right: 40px;
+  cursor: pointer;
+  &:hover {
+    color: #f35667;
+    background: white;
+  }
 `;

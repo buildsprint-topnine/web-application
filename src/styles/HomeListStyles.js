@@ -41,26 +41,25 @@ export const ItemCard = styled.div`
 `;
 
 export const ItemContainer = styled.div`
-  /* border: 2px solid red; */
   display: flex;
   flex-wrap: wrap;
 `;
 
 export const Button = styled.button`
-/* swapped the hover effect */
-border:2px solid blue;
+  /* swapped the hover effect */
   padding: 0.25em 1em;
   width: 34%;
   background: #f35667;
   border: 1px solid #f35667;
-  margin-bottom:10px;
+  margin-bottom: 10px;
   box-sizing: border-box;
   border-radius: 5px;
   color: #fff;
   margin-top: 4px;
+  margin-left: 4px;
   cursor: pointer;
   &:hover {
     color: #f35667;
-    background: white ;
+    background: white;
   }
 `;

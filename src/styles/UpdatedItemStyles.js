@@ -64,7 +64,6 @@ export const Div = styled.div`
 export const Section = styled.section`
   /* background: linear-gradient(180deg, #1f43d4 0%, rgba(31, 67, 212, 0.5) 100%);
   height: 100vh; */
-  */
 `;
 
 export const TitleImage = styled.div`

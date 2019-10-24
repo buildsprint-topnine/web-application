@@ -14,6 +14,7 @@ import {
 } from "../styles/UpdatedItemStyles";
 const UpdatedItem = props => {
   const { fetchItemsById, match, update } = props;
+
   const initialList = {
     title: "",
     image_url: "",
