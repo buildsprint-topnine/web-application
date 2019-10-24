@@ -57,7 +57,7 @@ function HomeList(props) {
                     return delItem(e, char.id);
                   }}
                 >
-                  Delete Item
+                  Delete
                 </Button>
               </NavLink>
             </div>
