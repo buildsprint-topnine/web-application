@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const Input = styled.input`
   height: 40px;
@@ -29,14 +29,21 @@ export const Label = styled.label`
 `;
 
 export const Button = styled.button`
-  background: #F35667;
+  background: #f35667;
   border-radius: 8px;
-  border: 2px solid #F35667;
+  border: 2px solid #f35667;
   color: white;
   padding: 0.25em 1em;
   height: 40px;
   width: 160px;
   margin-left: 100px;
+  box-sizing: border-box;
+
+  cursor: pointer;
+  &:hover {
+    color: #f35667;
+    background: white;
+  }
 `;
 
 export const Div = styled.div`
@@ -57,7 +64,7 @@ export const Section = styled.section`
 `;
 
 export const TitleImage = styled.div`
-  display:flex;
+  display: flex;
   font-family: Ubuntu;
   font-style: normal;
   font-weight: normal;
@@ -84,11 +91,11 @@ export const Desc = styled.div`
   p {
     color: #1f43d4;
     margin-bottom: 1px;
-    margin-left: 10px
+    margin-left: 10px;
   }
 
   input {
     margin-top: 1px;
-    width:90%;
+    width: 90%;
   }
 `;

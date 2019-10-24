@@ -19,7 +19,7 @@ import Tooltip from "@material-ui/core/Tooltip";
 
 function HomeList(props) {
   const { fetchItems, item, deleteItem } = props;
-
+  console.log(props);
   useEffect(() => {
     fetchItems();
   }, [fetchItems]);
@@ -44,7 +44,12 @@ function HomeList(props) {
           , Welcome!{" "}
         </P>
         <NavLink to="/home/additem">
-          <button className="lg-form-button">Add Item</button>
+          <button
+            disabled={item.data.topNine.length === 9 ? true : false}
+            className="lg-form-button"
+          >
+            Add Item
+          </button>
         </NavLink>
       </Div2>
       <ItemContainer>
