@@ -42,12 +42,12 @@ function FriendList(props) {
         </Link>
       ))}
 
-      {friend.isFetching && (
+      {/* {friend.isFetching && (
         <>
           <h2>Loading...</h2>
           <Loader type="TailSpin" color="#f35667" height={80} width={80} />
         </>
-      )}
+      )} */}
     </Div>
   );
 }

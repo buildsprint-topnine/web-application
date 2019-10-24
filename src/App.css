@@ -201,3 +201,11 @@
 .input-description{
 width:90%;
 }
+
+new{
+  width: 50%;
+    margin: auto;
+    box-shadow: 0 4px 16px 0 rgba(0,0,0,0.06);
+    height: 344px;
+    margin-top: 20px;
+}
