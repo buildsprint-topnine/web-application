@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axiosWithAuth from "../utils/axiosWithAuth";
 import { connect } from "react-redux";
+import * as actionCreators from "../state/actionCreators";
 import {
   Input,
   MainDiv,
@@ -11,16 +12,24 @@ import {
   TitleImage,
   Desc
 } from "../styles/UpdatedItemStyles";
-
 const UpdatedItem = props => {
+  const { fetchItemsById, match, update } = props;
+
   const initialList = {
     title: "",
+    image_url: "",
     description: ""
   };
   const [updateId, setUpdateId] = useState(initialList);
-
-  const id = props.match.params.id;
-
+  const id = match.params.id;
+  useEffect(() => {
+    fetchItemsById(id);
+  }, [fetchItemsById, id]);
+  useEffect(() => {
+    setUpdateId({
+      ...update.data
+    });
+  }, [update.data]);
   const handleChange = e => {
     e.preventDefault();
     setUpdateId({
@@ -28,11 +37,9 @@ const UpdatedItem = props => {
       [e.target.name]: e.target.value
     });
   };
-
   const data = {
     ...updateId
   };
-
   const updateMovie = e => {
     e.preventDefault();
     axiosWithAuth()
@@ -44,9 +51,8 @@ const UpdatedItem = props => {
         props.history.push("/dashboard/home");
       })
 
-      .catch(err => console.log(err));
+      .catch(err => err);
   };
-
   return (
     <Section>
       <MainDiv>
@@ -79,7 +85,6 @@ const UpdatedItem = props => {
               </Label>
             </Div>
           </TitleImage>
-
           <br />
           <div>
             <Desc>
@@ -106,8 +111,9 @@ const UpdatedItem = props => {
     </Section>
   );
 };
-
-export default connect(state => {
-  console.log(state);
-  return state;
-})(UpdatedItem);
+export default connect(
+  state => {
+    return state;
+  },
+  actionCreators
+)(UpdatedItem);

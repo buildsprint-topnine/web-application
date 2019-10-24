@@ -71,7 +71,8 @@ function AddItem(props) {
               <Label>
                 <p>Description</p>
                 <br />
-                <Input className="input-description"
+                <Input
+                  className="input-description"
                   name="description"
                   placeholder="Description"
                   value={friend.description}

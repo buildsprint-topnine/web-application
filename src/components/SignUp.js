@@ -40,13 +40,10 @@ const SignUp = props => {
       })
       .then(response => {
         setLoading(false);
-
-        // localStorage.setItem('token', response.data.token)
         props.history.push("/");
       })
       .catch(error => {
         setLoading(false);
-        console.log(error);
       });
   };
 
@@ -60,15 +57,30 @@ const SignUp = props => {
         <p style={{ color: "#f35667" }}>{error}</p>
         <div className="mini-container">
           <p> Username </p>
-          <input className="su-input" ref={nameRef} type="text" />
+          <input
+            className="su-input"
+            ref={nameRef}
+            type="text"
+            autoComplete="username"
+          />
         </div>
         <div className="mini-container">
-          <p>  Email  </p>
-          <input className="su-input" ref={emailRef} type="email" />
+          <p> Email </p>
+          <input
+            className="su-input"
+            ref={emailRef}
+            type="email"
+            autoComplete="email"
+          />
         </div>
         <div className="mini-container">
           <p> Password </p>
-          <input className="su-input" ref={passwordRef} type="password" />
+          <input
+            className="su-input"
+            ref={passwordRef}
+            type="password"
+            autoComplete="current-password"
+          />
         </div>
         <div className="mini-container">
           <button onClick={submit} className="su-form-button">

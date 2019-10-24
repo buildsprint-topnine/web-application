@@ -20,13 +20,10 @@ export default function Login(props) {
     };
     axios(options)
       .then(res => {
-        console.log(res.data);
-
         window.localStorage.setItem("token", res.data.token);
         props.history.push("/dashboard/home");
       })
       .catch(err => {
-        console.log(err);
         alert("An error occurred!");
       });
   };
@@ -54,6 +51,7 @@ export default function Login(props) {
                 value={user.email}
                 onChange={handleInput}
                 className="lg-form-input"
+                autoComplete="email"
               />
             </div>
             <div className="mini-container">
@@ -66,6 +64,7 @@ export default function Login(props) {
                 placeholder="Password"
                 onChange={handleInput}
                 className="lg-form-input"
+                autoComplete="current-password"
               />
             </div>
 
