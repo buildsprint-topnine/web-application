@@ -16,7 +16,7 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import TopBar from "./TopBar";
 
 function HomeList(props) {
-  const { fetchItems, item, deleteItem } = props;
+  const { fetchItems, item, deleteItem, update } = props;
 
   useEffect(() => {
     fetchItems();
@@ -58,6 +58,9 @@ function HomeList(props) {
                 >
                   Delete
                 </Button>
+              </NavLink>
+              <NavLink to={`/update-item/${update.data.id}`}>
+                <Button>Update Item</Button>
               </NavLink>
             </div>
           </ItemCard>

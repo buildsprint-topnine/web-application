@@ -48,6 +48,7 @@ export const ItemContainer = styled.div`
 
 export const Button = styled.button`
 /* swapped the hover effect */
+border:2px solid blue;
   padding: 0.25em 1em;
   width: 34%;
   background: #f35667;

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Input = styled.input`
   height: 40px;
@@ -33,10 +33,20 @@ export const Button = styled.button`
   border-radius: 8px;
   border: 2px solid #f35667;
   color: white;
-  /* padding: 0.25em 1em; */
+  padding: 0.25em 1em;
   height: 40px;
-  width: 160px;
   margin-left: 100px;
+  width: 34%;
+  background: #f35667;
+  border: 1px solid #f35667;
+
+  box-sizing: border-box;
+
+  cursor: pointer;
+  &:hover {
+    color: #f35667;
+    background: white;
+  }
 `;
 
 export const Div = styled.div`
