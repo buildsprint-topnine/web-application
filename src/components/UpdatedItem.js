@@ -12,33 +12,23 @@ import {
   TitleImage,
   Desc
 } from "../styles/UpdatedItemStyles";
-
 const UpdatedItem = props => {
-
-  const { fetchItemsById, match, update, } = props
-  console.log(update)
-//debugger;
+  const { fetchItemsById, match, update } = props;
   const initialList = {
     title: "",
-    image_url:"",
+    image_url: "",
     description: ""
   };
   const [updateId, setUpdateId] = useState(initialList);
-
-  console.log(props);
   const id = match.params.id;
-
   useEffect(() => {
-    fetchItemsById(id)
-    
-  }, []);
-
-  useEffect(()=>{
+    fetchItemsById(id);
+  }, [fetchItemsById, id]);
+  useEffect(() => {
     setUpdateId({
       ...update.data
-    })
-  }, [update.data])
-
+    });
+  }, [update.data]);
   const handleChange = e => {
     e.preventDefault();
     setUpdateId({
@@ -46,11 +36,9 @@ const UpdatedItem = props => {
       [e.target.name]: e.target.value
     });
   };
-
   const data = {
     ...updateId
   };
-
   const updateMovie = e => {
     e.preventDefault();
     axiosWithAuth()
@@ -64,7 +52,6 @@ const UpdatedItem = props => {
 
       .catch(err => err);
   };
-
   return (
     <Section>
       <MainDiv>
@@ -97,7 +84,6 @@ const UpdatedItem = props => {
               </Label>
             </Div>
           </TitleImage>
-
           <br />
           <div>
             <Desc>
@@ -124,10 +110,8 @@ const UpdatedItem = props => {
     </Section>
   );
 };
-
 export default connect(
   state => {
-    console.log(state);
     return state;
   },
   actionCreators

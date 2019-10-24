@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import axiosWithAuth from "../utils/axiosWithAuth";
+import React, { useEffect } from "react";
+
 import HomeCard from "./HomeCard";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
@@ -7,8 +7,6 @@ import styled from "styled-components";
 import * as actionCreators from "../state/actionCreators";
 
 function Home({ fetchItemsById, match, update }) {
-  console.log(update);
-
   useEffect(() => {
     fetchItemsById(match.params.id);
   }, [match.params.id, fetchItemsById]);
@@ -31,7 +29,6 @@ function Home({ fetchItemsById, match, update }) {
 
 export default connect(
   state => {
-    console.log(state);
     return state;
   },
   actionCreators

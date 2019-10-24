@@ -31,7 +31,6 @@ const initialFriendItem = [];
 const FriendHome = props => {
   const [topNine, setTopNine] = useState(initialFriendItem);
   const id = props.match.params.id;
-  console.log(props);
 
   useEffect(() => {
     axiosWithAuth()
@@ -39,9 +38,7 @@ const FriendHome = props => {
       .then(res => {
         return setTopNine(res.data);
       })
-      .catch(err => {
-        console.log(err.response);
-      });
+      .catch(err => err.response);
   }, [id]);
 
   if (!topNine) {

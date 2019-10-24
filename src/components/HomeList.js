@@ -50,7 +50,6 @@ function HomeList(props) {
           <ItemCard key={char.id}>
             <div>
               <NavLink to={`/item/${char.id}`}>
-             
                 <HomeCard things={char} />
                 <Button
                   onClick={function(e) {
