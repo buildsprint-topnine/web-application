@@ -11,18 +11,23 @@ import {
   TitleImage,
   Desc
 } from "../styles/AddItemFormStyles";
+
 function AddItem(props) {
   const [friend, setFriend] = useState({
     title: "",
     description: "",
     image_url: ""
   });
+  
+  
   function inputChange(e) {
     return setFriend({
       ...friend,
       [e.target.name]: e.target.value
     });
   }
+
+
   function submitForm(e) {
     e.preventDefault();
     props.addItem(friend);
@@ -33,6 +38,7 @@ function AddItem(props) {
       image_url: ""
     });
   }
+
   return (
     <Section>
       <MainDiv>
@@ -43,12 +49,7 @@ function AddItem(props) {
               <Label>
                 <p>Title</p>
                 <br />
-                <Input
-                  name="title"
-                  placeholder="title"
-                  value={friend.title}
-                  onChange={inputChange}
-                />
+                <Input name="title" placeholder="title" value={friend.title} onChange={inputChange}/>
               </Label>
             </Div>
             <br />
@@ -56,12 +57,7 @@ function AddItem(props) {
               <Label>
                 <p>Image URL</p>
                 <br />
-                <Input
-                  name="image_url"
-                  placeholder="Image Url"
-                  value={friend.image_url}
-                  onChange={inputChange}
-                />
+                <Input name="image_url" placeholder="Image Url" value={friend.image_url} onChange={inputChange} />
               </Label>
             </Div>
           </TitleImage>
@@ -71,13 +67,7 @@ function AddItem(props) {
               <Label>
                 <p>Description</p>
                 <br />
-                <Input
-                  className="input-description"
-                  name="description"
-                  placeholder="Description"
-                  value={friend.description}
-                  onChange={inputChange}
-                />
+                <Input className="input-description" name="description" placeholder="Description" value={friend.description} onChange={inputChange}/>
               </Label>
             </Desc>
           </div>
@@ -92,7 +82,4 @@ function AddItem(props) {
     </Section>
   );
 }
-export default connect(
-  state => state,
-  { addItem }
-)(AddItem);
+export default connect( state => state, { addItem })(AddItem);

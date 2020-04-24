@@ -222,3 +222,48 @@
 .input-description {
   width: 90%;
 }
+
+@media (min-width:468px) and (max-width:800px) {
+  .su-section {
+    background: white;
+    width: 50%;
+    color: #2f50d7;
+    padding-left: 50px;
+    padding-right: 45px;
+  }
+}
+
+@media only screen and (max-width: 468px) {
+
+  .su-text-p{
+    display: none;
+  }
+  .su-section {
+    background: white;
+    width: 100%;
+    color: #2f50d7;
+    padding-left: 50px;
+    padding-right: 45px;
+  }
+ 
+  
+   .su-input {
+    height: 45px;
+    border-radius: 5px;
+    background: #edf2f7;
+    border: none;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  .su-form-button {
+    border: none;
+    padding: 10px 30px;
+    background: #f35667;
+    border-radius: 8px;
+    color: white;
+    height: 45px;
+    margin-top: 45px;
+  }
+}
+

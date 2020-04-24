@@ -18,34 +18,27 @@ function DashBoard(props) {
             <h3>Home</h3>
           </div>
         </NavLink>
+
         <NavLink exact to="/dashboard/friends">
           <div className="sidebar-div">
             <h3>Friends</h3>
           </div>
         </NavLink>
+
         <NavLink exact to="/" onClick={onLogout}>
           <div className="sidebar-div">
             <h3>Logout</h3>
           </div>
-        </NavLink>
+        </NavLink>        
       </div>
-      <Route
-        exact
-        path="/dashboard/home"
-        render={props => <HomeList {...props} />}
-      />
-      <Route
-        exact
-        path="/dashboard/friends"
-        render={props => <FriendList {...props} />}
-      />
+
+      <Route exact path="/dashboard/home"render={props => <HomeList {...props} />}  />
+      <Route exact path="/dashboard/friends"render={props => <FriendList {...props} />} />
+
     </div>
   );
 }
 
-export default connect(
-  state => {
-    return state;
-  },
-  actionCreators
-)(DashBoard);
+export default connect(  state => {
+   return state;
+  }, actionCreators)(DashBoard);

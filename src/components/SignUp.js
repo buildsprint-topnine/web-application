@@ -57,30 +57,15 @@ const SignUp = props => {
         <p style={{ color: "#f35667" }}>{error}</p>
         <div className="mini-container">
           <p> Username </p>
-          <input
-            className="su-input"
-            ref={nameRef}
-            type="text"
-            autoComplete="username"
-          />
+          <input className="su-input" ref={nameRef} type="text" autoComplete="username" />
         </div>
         <div className="mini-container">
           <p> Email </p>
-          <input
-            className="su-input"
-            ref={emailRef}
-            type="email"
-            autoComplete="email"
-          />
+          <input className="su-input" ref={emailRef} type="email" autoComplete="email" />
         </div>
         <div className="mini-container">
           <p> Password </p>
-          <input
-            className="su-input"
-            ref={passwordRef}
-            type="password"
-            autoComplete="current-password"
-          />
+          <input className="su-input" ref={passwordRef} type="password" autoComplete="current-password" />
         </div>
         <div className="mini-container">
           <button onClick={submit} className="su-form-button">

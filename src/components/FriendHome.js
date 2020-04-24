@@ -6,9 +6,11 @@ import styled from "styled-components";
 const Div = styled.div`
   flex: 1;
   flex-direction: row;
+  width: 100%;
   position: absolute;
-  top: 10%;
-  left: 20%;
+  top: 5%;
+  left: 10%;
+  
 `;
 
 const ItemCard = styled.div`
