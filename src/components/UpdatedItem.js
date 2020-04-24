@@ -63,12 +63,7 @@ const UpdatedItem = props => {
               <Label>
                 <p>Title:</p>
                 <br />
-                <Input
-                  name="title"
-                  placeholder="Title"
-                  value={updateId.title}
-                  onChange={handleChange}
-                />
+                <Input  name="title" placeholder="Title" value={updateId.title} onChange={handleChange} />
               </Label>
             </Div>
             <br />
@@ -76,12 +71,7 @@ const UpdatedItem = props => {
               <Label>
                 <p>Image URL</p>
                 <br />
-                <Input
-                  name="image_url"
-                  placeholder="Image Url"
-                  value={updateId.image_url}
-                  onChange={handleChange}
-                />
+                <Input name="image_url" placeholder="Image Url" value={updateId.image_url} onChange={handleChange}/>
               </Label>
             </Div>
           </TitleImage>
@@ -91,12 +81,7 @@ const UpdatedItem = props => {
               <Label>
                 <p>Description:</p>
                 <br />
-                <Input
-                  name="description"
-                  placeholder="Description"
-                  value={updateId.description}
-                  onChange={handleChange}
-                />
+                <Input name="description" placeholder="Description" value={updateId.description} onChange={handleChange}/>
               </Label>
             </Desc>
           </div>

@@ -11,6 +11,7 @@ import Home from "./components/Home";
 import UpdatedItem from "./components/UpdatedItem";
 import FriendHome from "./components/FriendHome";
 
+
 function App() {
   return (
     <div className="App">
@@ -20,23 +21,13 @@ function App() {
       />
       <Route exact path="/signup" component={Signup} />
       <Route exact path="/" component={Login} />
-      <Route
-        exact
-        path="/home/additem"
-        render={props => <AddItem {...props} />}
-      />
-      <Route
-        path="/item/:id"
-        render={props => {
+      <Route exact path="/home/additem" render={props => <AddItem {...props} />} />
+      <Route path="/item/:id" render={props => {
           return <Home {...props} />;
         }}
       />
       <Route path="/update-item/:id" component={UpdatedItem} />
-      <Route
-        exact
-        path="/dashboard/friends/:id/topnine"
-        component={FriendHome}
-      />
+      <Route exact path="/dashboard/friends/:id/topnine" component={FriendHome}/>
     </div>
   );
 }

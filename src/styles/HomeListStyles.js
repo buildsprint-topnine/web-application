@@ -42,7 +42,7 @@ export const ItemCard = styled.div`
 
 export const ItemContainer = styled.div`
   display: flex;
-  flex-wrap: wrap;
+   flex-wrap: wrap; 
 `;
 
 export const Button = styled.button`

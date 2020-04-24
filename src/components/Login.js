@@ -44,35 +44,17 @@ export default function Login(props) {
             <h4 style={{ color: "#2f50d7", fontSize: "27px" }}>LOGIN</h4>
             <div className="mini-container">
               Email
-              <input
-                required
-                name="email"
-                placeholder="email"
-                value={user.email}
-                onChange={handleInput}
-                className="lg-form-input"
-                autoComplete="email"
-              />
+              <input required name="email" placeholder="email" value={user.email} onChange={handleInput} className="lg-form-input" autoComplete="email"/>
             </div>
             <div className="mini-container">
               Password
-              <input
-                required
-                name="password"
-                value={user.password}
-                type="password"
-                placeholder="Password"
-                onChange={handleInput}
-                className="lg-form-input"
-                autoComplete="current-password"
-              />
+              <input required name="password" value={user.password} type="password" placeholder="Password" onChange={handleInput} className="lg-form-input" autoComplete="current-password"/>
             </div>
 
             <div>
-              <button type="submit" className="lg-form-button">
-                Login
-              </button>
+              <button type="submit" className="lg-form-button"> Login </button>
             </div>
+            
             <br></br>
             <NavLink
               className="login-a"

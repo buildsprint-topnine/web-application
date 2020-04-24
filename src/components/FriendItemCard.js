@@ -2,9 +2,12 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledDiv = styled.div`
-  max-width: 300px;
+  width: 200px;
   img {
-    max-width: 200px;
+    width: 200px;
+    height: 140px;
+    margin-left: 46px;
+    margin-top: 20px;
   }
 `;
 
