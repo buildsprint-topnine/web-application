@@ -223,7 +223,7 @@
   width: 90%;
 }
 
-@media (min-width:468px) and (max-width:800px) {
+@media (min-width:468px) and (max-width:768px) {
   .su-section {
     background: white;
     width: 50%;
@@ -231,13 +231,38 @@
     padding-left: 50px;
     padding-right: 45px;
   }
+  .lg-form-signup {
+    width: 110px;
+    height: 24px;
+    left: 815px;
+    top: 611px;  
+    font-family: Ubuntu;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+  
+    background: #f5f8fa;
+  }
 }
 
-@media only screen and (max-width: 468px) {
+@media  (max-width: 468px) {
 
   .su-text-p{
     display: none;
   }
+  .lg-welcome{
+    display: none;
+  }
+  .lg-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    
+  }
+  
   .su-section {
     background: white;
     width: 100%;
@@ -266,4 +291,6 @@
     margin-top: 45px;
   }
 }
+
+
 
